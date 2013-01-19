@@ -1,0 +1,751 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>姫路IT系勉強会 Vol.13 - ZenCoding使って、爆早HTML&amp;CSSコーディング！</title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<script src="print_pdf.js"></script>
+				<script src="reveal_init.js"></script>
+		<!--[if lt IE 9]>
+			<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>ZenCoding使って、爆速HTML&CSSコーディング！</h1>
+					<h2>姫路IT系勉強会 Vol.13</h2>
+					<p><small>Created by <a href="http://twitter.com/aWebprogrammer">@aWebprogrammer</a></small></p>
+				</section>
+				<section>
+					<h2>ぷろふぃ～る</h2>
+					<ul>
+						<li class="fragment">女子よりも、PHPが好き！(但し、天然は除く)</li>
+						<li class="fragment">３度の飯よりWebネタで盛り上がるのが好き！</li>
+						<li class="fragment">ってか、飯食いません！(デフォルトが1日1食)</li>
+						<li class="fragment">コーヒーとタバコで命をつないでます！</li>
+						<li class="fragment">一言で言うと、変ジニアです！！</li>
+						<li class="fragment">SEではなく、SHでござるぅ～～！！</li>
+					</ul>
+					<h3 class="fragment">「ワテちゃん&hearts;」って読んでね(うふっ&hearts;)</h3>
+				</section>
+				<section>
+					<h2>ZenCodingって何？</h2>
+					<p>
+					一言で言えばHTMLやCSSをちょ～～簡単に書くことができるようになる魔法のツールです!<br />
+					ZenCoding記法と記法を展開するためのショートカットを覚えると超高速でHTMLを書くことができます！<br />
+					<small>(※既にZenCoding自体の開発は終了して、Emmetという後継バージョンが出てます)</small>
+					</p>
+				</section>
+				<section>
+					<h2>それ以外にも・・・</h2>
+					<p>ZenCodingを使えば以下のようなことができます。<br /><small>(※一部の機能を抜粋)</small></p>
+					<ul>
+						<li>ZenCoding記法で包括</li>
+						<li>タグの外側や内側の内容を選択</li>
+						<li>前/次の編集箇所への移動</li>
+						<li>前/次のアイテムを選択</li>
+						<li>対応する開始/終了タグに移動</li>
+						<li>複数の要素を1行にする</li>
+						<li>値の加算/減算(1|10|0.1)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>ZenCodingの記法って<br />具体的にはどんなの？</h2>
+					<p><small>タグと以下の内容を組み合わせてタグの構造を記述します</small></p>
+					<ul>
+						<li>IDセレクタ：E#name</li>
+						<li>クラスセレクタ：E.name</li>
+						<li>子供セレクタ：E&gt;E</li>
+						<li>兄弟隣接セレクタ：E+E</li>
+						<li>属性セレクタ：E[attribute=value]</li>
+						<li>繰り返し：＊&lt;繰り返す回数&gt;</li>
+						<li>連番：$</li>
+						<li>タグ内テキスト：{}</li>
+						<li>グルーピング：()</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h3>まずは、基本から</h3>
+						<ul>
+							<li>div#name</li>
+							<li>div.name</li>
+							<li>div.one.two</li>
+							<li>head&gt;link</li>
+							<li>table&gt;tr&gt;td</li>
+							<li>ul#name&gt;li.item</li>
+							<li>p+p</li>
+							<li>div#name&gt;p.one+p.two</li>
+							<li>p[title]</li>
+							<li>td[colspan=2]</li>
+							<li>span[title="Hello" rel]</li>
+						</ul>
+						<p><a href="#" class="navigate-down">これを展開すると・・・↓</a></p>
+					</section>
+					<section>
+<pre><code contenteditable>&lt;!-- 「div#name」を展開すると・・・ --&gt;
+&lt;div id="name"&gt;&lt;/div&gt;
+&lt;!-- 「div.name」を展開すると・・・ --&gt;
+&lt;div class="name"&gt;&lt;/div&gt;
+&lt;!-- 「div.one.two」を展開すると・・・ --&gt;
+&lt;div class="one two"&gt;&lt;/div&gt;
+&lt;!-- 「head&gt;link」を展開すると・・・ --&gt;
+&lt;head&gt;
+	&lt;link rel="stylesheet" href=""&gt;
+&lt;/head&gt;
+&lt;!-- 「table&gt;tr&gt;td」を展開すると・・・ --&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt
+&lt;!-- 「ul#name&gt;li.item」 --&gt;
+&lt;ul id="name"&gt;
+	&lt;li class="item"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- 「p+p」を展開すると・・・ --&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;!-- 「div#name&gt;p.one+p.two」を展開すると・・・ --&gt;
+&lt;div id="name"&gt;
+	&lt;p class="one"&gt;&lt;/p&gt;
+	&lt;p class="two"&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- 「p[title]」を展開すると・・・ --&gt;
+&lt;p title=""&gt;&lt;/p&gt;
+&lt;!-- 「td[colspan=2]」を展開すると・・・ --&gt;
+&lt;td colspan="2"&gt;&lt;/td&gt;
+&lt;!-- 「span[title="Hello" rel]」を展開すると・・・ --&gt;
+&lt;span title="Hello" rel=""&gt;&lt;/span&gt;
+</code></pre>
+					</section>
+					<section>
+						<h3>さらに、こんなことも・・・・</h3>
+						<ul>
+							<li>p*3</li>
+							<li>p.title|e</li>
+							<li>p.name-$*3</li>
+							<li>select&gt;option#item-$*3</li>
+							<li>ul+</li>
+							<li>table+</li>
+							<li>dl+</li>
+						</ul>
+						<p><a href="#" class="navigate-down">これを展開すると・・・↓</a></p>
+					</section>
+					<section>
+<pre><code contenteditable>&lt;!-- 「p*3」を展開すると・・・ --&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;!-- 「p.title|e」を展開すると・・・ --&gt;
+&amp;lt;p class="title"&amp;gt;&amp;lt;/p&amp;gt;
+&lt;!-- 「p.name-$*3」を展開すると・・・ --&gt;
+&lt;p class="name-1"&gt;&lt;/p&gt;
+&lt;p class="name-2"&gt;&lt;/p&gt;
+&lt;p class="name-3"&gt;&lt;/p&gt;
+&lt;!-- 「select>option#item-$*3」を展開すると・・・ --&gt;
+&lt;select name="" id=""&gt;
+	&lt;option value="" id="item-1"&gt;&lt;/option&gt;
+	&lt;option value="" id="item-2"&gt;&lt;/option&gt;
+	&lt;option value="" id="item-3"&gt;&lt;/option&gt;
+&lt;/select&gt;
+&lt;!-- 「ul+」を展開すると・・・ --&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- 「table+」を展開すると・・・ --&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;!-- 「dl+」を展開すると・・・ --&gt;
+&lt;dl&gt;
+	&lt;dt&gt;&lt;/dt&gt;
+	&lt;dd&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>ｗ（￣△￣；）ｗおおっ！</h2>
+				</section>
+				<section>
+					<section>
+						<h2>CSSもめっちゃ楽に・・・</h2>
+						<p>全部紹介しきれないのでとりあえず一部を紹介</p>
+						<p><a href="#" class="navigate-down">では、行きます！↓</a></p>						
+					</section>
+					<section>
+						<h3>まずは、margin</h3>
+						<ul>
+							<li>m&nbsp;&nbsp;=&gt;&nbsp;&nbsp;margin:;</li>
+							<li>m:a&nbsp;&nbsp;=&gt;&nbsp;&nbsp;margin:auto;</li>
+							<li>m:0&nbsp;&nbsp;=&gt;&nbsp;&nbsp;margin:0;</li>
+							<li>m:2&nbsp;&nbsp;=&gt;&nbsp;&nbsp;margin:0 0;</li>
+							<li>m:3&nbsp;&nbsp;=&gt;&nbsp;&nbsp;margin:0 0 0;</li>
+							<li>m:4&nbsp;&nbsp;=&gt;&nbsp;&nbsp;margin:0 0 0 0;</li>
+							<li>mt&nbsp;&nbsp;=&gt;&nbsp;&nbsp;margin-top:;</li>
+							<li>mr&nbsp;&nbsp;=&gt;&nbsp;&nbsp;margin-right:;</li>
+							<li>mb&nbsp;&nbsp;=&gt;&nbsp;&nbsp;margin-bottom:;</li>
+							<li>ml&nbsp;&nbsp;=&gt;&nbsp;&nbsp;margin-left:;</li>
+						</ul>
+						<p><a href="#" class="navigate-down">↓次↓</a></p>						
+					</section>
+					<section>
+						<h3>続いて、padding</h3>
+						<ul>
+							<li>p&nbsp;&nbsp;=&gt;&nbsp;&nbsp;padding:;</li>
+							<li>p:0&nbsp;&nbsp;=&gt;&nbsp;&nbsp;padding:0;</li>
+							<li>p:2&nbsp;&nbsp;=&gt;&nbsp;&nbsp;padding:0 0;</li>
+							<li>p:3&nbsp;&nbsp;=&gt;&nbsp;&nbsp;padding:0 0 0;</li>
+							<li>p:4&nbsp;&nbsp;=&gt;&nbsp;&nbsp;padding:0 0 0 0;</li>
+							<li>pt&nbsp;&nbsp;=&gt;&nbsp;&nbsp;padding-top:;</li>
+							<li>pr&nbsp;&nbsp;=&gt;&nbsp;&nbsp;padding-right:;</li>
+							<li>pb&nbsp;&nbsp;=&gt;&nbsp;&nbsp;padding-bottom:;</li>
+							<li>pl&nbsp;&nbsp;=&gt;&nbsp;&nbsp;padding-left:;</li>
+						</ul>
+						<p><a href="#" class="navigate-down">↓次↓</a></p>						
+					</section>
+					<section>
+						<h3>続いて、text-align</h3>
+						<ul>
+							<li>ta&nbsp;&nbsp;=&gt;&nbsp;&nbsp;text-align:;</li>
+							<li>ta:l&nbsp;&nbsp;=&gt;&nbsp;&nbsp;text-align:left;</li>
+							<li>ta:c&nbsp;&nbsp;=&gt;&nbsp;&nbsp;text-align:center;</li>
+							<li>ta:r&nbsp;&nbsp;=&gt;&nbsp;&nbsp;text-align:right;</li>
+							<li>ta:j&nbsp;&nbsp;=&gt;&nbsp;&nbsp;text-align:justify;</li>
+						</ul>
+						<p><a href="#" class="navigate-down">↓次↓</a></p>						
+					</section>
+					<section>
+						<h3>最後に、position</h3>
+						<ul>
+							<li>pos&nbsp;&nbsp;=&gt;&nbsp;&nbsp;position:;</li>
+							<li>pos:s&nbsp;&nbsp;=&gt;&nbsp;&nbsp;position:static;</li>
+							<li>pos:a&nbsp;&nbsp;=&gt;&nbsp;&nbsp;position:absolute;</li>
+							<li>pos:r&nbsp;&nbsp;=&gt;&nbsp;&nbsp;position:relative;</li>
+							<li>pos:f&nbsp;&nbsp;=&gt;&nbsp;&nbsp;position:fixed;</li>
+						</ul>
+						<p><small>※とりあえず入力がめんどくさそうなのを抜粋してますが、<br />これ以外にいろいろあります</small></p>
+					</section>
+				</section>
+				<section>
+					<h2>ｗ（￣△￣；）ｗおおっ！</h2>
+				</section>
+				<section>
+					<section>
+						<h2>さらに高速化するために</h2>
+						<p>グリッドシステムなどのCSSフレームワークと併用すると<br />
+						タグの構造が決められてるので<br />
+						さらに高速にHTMLを書くことができます！</p>
+						<p><a href="#" class="navigate-down">Twitter Bootstrapを使ったサンプル↓</a></p>
+					</section>
+					<section>
+						<h2>グリッド</h2>
+<pre><code contenteditable>(
+div.row&gt;
+	div.span12
+)
++
+(
+div.row&gt;
+	div.span2
+	+
+	div.span10&gt;
+		div.row&gt;
+			div.span6
+			+
+			div.span4
+)
++
+(
+div.row&gt;
+	div.span4*3
+)
++
+div.row&gt;
+	div.span8
+	+
+	div.span4
+</code></pre>
+						<p><small>※見やすく整形してますが本当は1行です</small></p>
+						<p><a href="#" class="navigate-down">これを展開すると・・・↓</a></p>
+					</section>
+					<section>
+<pre><code contenteditable>&lt;div class="row"&gt;
+	&lt;div class="span12"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;div class="span2"&gt;&lt;/div&gt;
+	&lt;div class="span10"&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="span6"&gt;&lt;/div&gt;
+			&lt;div class="span4"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;div class="span4"&gt;&lt;/div&gt;
+	&lt;div class="span4"&gt;&lt;/div&gt;
+	&lt;div class="span4"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;div class="span8"&gt;&lt;/div&gt;
+	&lt;div class="span4"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+						<p><a href="#" class="navigate-down">お次は、入力フォーム↓</a></p>
+					</section>
+					<section>
+						<h2>入力フォーム</h2>
+<pre><code contenteditable>form.form-horizontal[method=post action]&gt;
+	(
+	div.control-group*5&gt;
+		label.control-label[for=name$]{ラベル$}
+		+
+		div.controls&gt;
+			input:text#name$[name=name$ value=$]
+			+
+			span.help-inline{インラインヘルプ$}
+			+
+			div.help-block{ブロックヘルプ$}
+	)
+	+
+	div.form-actions&gt;
+		input:reset.btn[value=リセット]
+		+
+		input:s.btn.btn-primary[value=送信]
+</code></pre>
+						<p><small>※見やすく整形してますが本当は1行です</small></p>
+						<p><a href="#" class="navigate-down">これを展開すると・・・↓</a></p>
+					</section>
+					<section>
+<pre><code contenteditable>&lt;form action="" class="form-horizontal" method="post"&gt;
+	&lt;div class="control-group"&gt;
+		&lt;label for="name1" class="control-label"&gt;ラベル1&lt;/label&gt;
+		&lt;div class="controls"&gt;
+			&lt;input type="text" name="name1" id="name1" value="1"&gt;
+			&lt;span class="help-inline"&gt;インラインヘルプ1&lt;/span&gt;
+			&lt;div class="help-block"&gt;ブロックヘルプ1&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="control-group"&gt;
+		&lt;label for="name2" class="control-label"&gt;ラベル2&lt;/label&gt;
+		&lt;div class="controls"&gt;
+			&lt;input type="text" name="name2" id="name2" value="2"&gt;
+			&lt;span class="help-inline"&gt;インラインヘルプ2&lt;/span&gt;
+			&lt;div class="help-block"&gt;ブロックヘルプ2&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="control-group"&gt;
+		&lt;label for="name3" class="control-label"&gt;ラベル3&lt;/label&gt;
+		&lt;div class="controls"&gt;
+			&lt;input type="text" name="name3" id="name3" value="3"&gt;
+			&lt;span class="help-inline"&gt;インラインヘルプ3&lt;/span&gt;
+			&lt;div class="help-block"&gt;ブロックヘルプ3&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="control-group"&gt;
+		&lt;label for="name4" class="control-label"&gt;ラベル4&lt;/label&gt;
+		&lt;div class="controls"&gt;
+			&lt;input type="text" name="name4" id="name4" value="4"&gt;
+			&lt;span class="help-inline"&gt;インラインヘルプ4&lt;/span&gt;
+			&lt;div class="help-block"&gt;ブロックヘルプ4&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="control-group"&gt;
+		&lt;label for="name5" class="control-label"&gt;ラベル5&lt;/label&gt;
+		&lt;div class="controls"&gt;
+			&lt;input type="text" name="name5" id="name5" value="5"&gt;
+			&lt;span class="help-inline"&gt;インラインヘルプ5&lt;/span&gt;
+			&lt;div class="help-block"&gt;ブロックヘルプ5&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="form-actions"&gt;&lt;input type="reset" value="リセット" class="btn"&gt;&lt;input type="submit" value="送信" class="btn btn-primary"&gt;&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>(゜ロ゜)…………………</h2>
+				</section>
+				<section>
+					<section>
+						<h2>もっと、もっと、高速化！</h2>
+						<p>ZenCodingやEmmetは省略記法のスニペットが<br />
+							ファイルで管理されてるのでよく使うコードは<br />
+							ZenCodingのスニペットとして登録しちゃえば<br />
+							神速の領域も夢じゃない！
+						</p>
+						<p><a href="#" class="navigate-down">設定ファイルの場所は・・・↓</a></p>
+					</section>
+					<section>
+						<h2>とりあえずわかる範囲で・・・</h2>
+						<p><small>Mac持ってないから、Macに関してはわからん・・・・</small></p>
+						<ul>
+							<li>
+								Sublime Text 2<br />
+								<small>C:\Users\(ユーザー名)\AppData\Roaming\Sublime Text 2\Packages\Emmet\emmet\snippets.json</small>
+							</li>
+							<li>
+								Dreamweaver<br />
+								<small>C:\Users\(ユーザー名)\AppData\Roaming\Adobe\Dreamweaver (バージョン)\ja_JP\Configuration\Commands\ZenCoding\my_zen_settings.js</small>
+							</li>
+							<li>
+								Notepad++<br />
+								<small>C:\Program Files\Notepad++\plugins\jN\includes\snippets.json<br />
+								※64Bit版Windowsの場合は「Program Files」ではなく「Program Files (x86)」
+								</small>
+							</li>
+							<li>
+								Dreamweaver(ワテ改造版)<br />
+								<small>C:\Users\(ユーザー名)\AppData\Roaming\Adobe\Dreamweaver (バージョン)\ja_JP\Configuration\Commands\ZenCoding\user.json<br />
+								(※メニューなどを日本語化してスニペットをJSONファイルで管理できるようにしたもの)
+								</small>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>オイラの場合の例</h2>
+						<p>「tw」を展開すると・・・・</p>
+<pre><code contenteditable>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Bootstrap, from Twitter&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="description" content=""&gt;
+    &lt;meta name="author" content=""&gt;	
+    &lt;link href="./css/bootstrap.min.css" rel="stylesheet"&gt;
+	&lt;!--[if lt IE 9]&gt;
+	&lt;script src="//html5shiv.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class="navbar navbar-inverse navbar-fixed-top"&gt;
+		&lt;div class="navbar-inner"&gt;
+			&lt;div class="container"&gt;
+				&lt;a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"&gt;
+					&lt;span class="icon-bar"&gt;&lt;/span&gt;
+					&lt;span class="icon-bar"&gt;&lt;/span&gt;
+					&lt;span class="icon-bar"&gt;&lt;/span&gt;
+				&lt;/a&gt;
+				&lt;a class="brand" href="#"&gt;Project name&lt;/a&gt;
+				&lt;div class="nav-collapse collapse"&gt;
+					&lt;ul class="nav"&gt;
+						&lt;li class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+						&lt;li class="dropdown"&gt;
+							&lt;a href="#" class="dropdown-toggle" data-toggle="dropdown"&gt;Dropdown &lt;b class="caret"&gt;&lt;/b&gt;&lt;/a&gt;
+							&lt;ul class="dropdown-menu"&gt;
+								&lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+								&lt;li class="divider"&gt;&lt;/li&gt;
+								&lt;li class="nav-header"&gt;Nav header&lt;/li&gt;
+								&lt;li&gt;&lt;a href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href="#"&gt;One more separated link&lt;/a&gt;&lt;/li&gt;
+							&lt;/ul&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+					&lt;form class="navbar-form pull-right"&gt;
+					&lt;input class="span2" type="text" placeholder="Email"&gt;
+					&lt;input class="span2" type="password" placeholder="Password"&gt;
+					&lt;button type="submit" class="btn"&gt;Sign in&lt;/button&gt;
+					&lt;/form&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="container"&gt;
+		&lt;div class="hero-unit"&gt;
+			&lt;h1&gt;Hello, world!&lt;/h1&gt;
+			&lt;p&gt;This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.&lt;/p&gt;
+			&lt;p&gt;&lt;a class="btn btn-primary btn-large"&gt;Learn more &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="span4"&gt;
+				&lt;h2&gt;Heading&lt;/h2&gt;
+				&lt;p&gt;Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. &lt;/p&gt;
+				&lt;p&gt;&lt;a class="btn" href="#"&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="span4"&gt;
+				&lt;h2&gt;Heading&lt;/h2&gt;
+				&lt;p&gt;Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. &lt;/p&gt;
+				&lt;p&gt;&lt;a class="btn" href="#"&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="span4"&gt;
+				&lt;h2&gt;Heading&lt;/h2&gt;
+				&lt;p&gt;Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/p&gt;
+				&lt;p&gt;&lt;a class="btn" href="#"&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;hr&gt;
+		&lt;footer&gt;
+			&lt;p&gt;&amp;copy; Company 2012&lt;/p&gt;
+		&lt;/footer&gt;
+	&lt;/div&gt;
+	&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"&gt;&lt;/script&gt;
+	&lt;script src="./js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+						<p><a href="http://twitter.github.com/bootstrap/examples/hero.html">Twitter Boostrapの雛形</a>が瞬時に展開されます！</p>
+					</section>
+				</section>
+				<section>
+					<h2>((((；゜Д゜)))</h2>
+				</section>
+				<section>
+					<h2>まとめ</h2>
+					<p>同じコードを書くにしても楽して書きたいよね？<br />
+						ZenCoding使えばHTMLやCSSを書く手間が激減するから<br />
+						「手間が減る=速度が上がる」ってことになります。<br />
+						いきなり全部の機能を使いこなさなくてもいいので、<br />
+						まずは、基本的な使い方だけでもいいので使ってみよう！<br />
+						<small>(めんどくさいのはイヤでござる！)心の声</small>
+					</p>
+				</section>
+				<section>
+					<h2>参考リンク</h2>
+					<ul>
+						<li><a href="http://code.google.com/p/zen-coding/downloads/detail?name=ZenCodingCheatSheet.pdf">Zen Coding cheat sheet (PDF)</a></li>
+						<li><a href="http://docs.emmet.io/">Emmet Documentation</a></li>
+						<li><a href="http://code.google.com/p/zen-coding/wiki/ZenHTMLSelectorsEn">ZenHTMLSelectorsEn</a></li>
+						<li><a href="http://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn">ZenCSSPropertiesEn</a></li>
+						<li><a href="http://code.google.com/p/zen-coding/wiki/Filters">Filters</a></li>
+						<li><a href="https://github.com/wate/dwZenCodingJP">Dreamweaver用ZenCodingプラグイン(ワテ改造版)</a></li>
+					</ul>
+				</section>
+				<section>
+					<h3>ご清聴、ありがとうございました。<br />m(_&nbsp;_)m</h3>
+				</section>
+				<section>
+					<section>
+						<h2>おまけ</h2>
+<pre><code contenteditable>html[lang=ja]&gt;
+	(
+	head&gt;
+		meta[charset=utf-8]
+		+
+		title{姫路IT系勉強会 Vol.13 - ZenCoding使って、爆速HTML&amp;CSSコーディング！}
+		+
+		meta[name=description content="ZenCoding使って、爆速HTML&amp;CSSコーディング！"]
+		+
+		meta[name=apple-mobile-web-app-capable content=yes]
+		+
+		meta[name=apple-mobile-web-app-status-bar-style content=black-translucent]
+		+
+		link[rel=stylesheet href=css/reveal.min.css]
+		+
+		link[rel=stylesheet href=css/theme/default.css id=theme]
+		+
+		link[rel=stylesheet href=lib/css/zenburn.css]
+		+
+		script[src=reveal_init.js]
+		+
+		(
+		cc:lt9&gt;
+			script[src=lib/js/html5shiv.js]
+		)
+	)
+	+
+	body&gt;
+		div.reveal&gt;
+			div.slides&gt;
+				(
+				section&gt;
+					h1{ZenCoding使って、爆速HTML&CSSコーディング！}
+					+
+					h2{姫路IT系勉強会 Vol.13}
+					+
+					p&gt;
+						small&gt;
+							{Created by }
+							+
+							a[href=http://twitter.com/aWebprogrammer]{@aWebprogrammer}
+				)
+				+
+				(
+				section&gt;
+					h2{ぷろふぃ～る}
+					+
+					(
+					ul&gt;
+						li.fragment{女子よりも、PHPが好き!(但し、天然は除く)}
+						+
+						li.fragment{３度の飯よりWebネタで盛り上がるのが好き!}
+						+
+						li.fragment{ってか、飯食いません!(デフォルトが1日1食!)}
+						+
+						li.fragment{コーヒーとタバコで命をつないでます!}
+						+
+						li.fragment{一言で言うと、変ジニアです!!}
+						+
+						li.fragment{SEではなく、SHでござるぅ～～!!}
+					)
+					+
+					h3.fragment{「ワテちゃん&hearts;」って読んでね(うふっ&hearts;)}
+				)
+				+
+				(
+				section*20&gt;
+					h2{タイトル$}
+					+
+					p{内容$}
+				)
+				+
+				script[src=lib/js/head.min.js]
+				+
+				script[src=js/reveal.min.js]
+				+
+				script[src=reveal_init.js]
+</code></pre>
+						<small>※見やすく整形してますが本当は1行です</small>
+						<small>※「cc:lt9」はオイラが独自に拡張してるのでZenCoding標準では展開されません</small>
+						<p><a href="#" class="navigate-down">これを展開すると・・・↓</a></p>
+					</section>
+					<section>
+<pre><code contenteditable>&lt;html lang="ja"&gt;
+	&lt;head&gt;
+		&lt;meta charset="utf-8"&gt;
+		&lt;title&gt;姫路IT系勉強会 Vol.13 - ZenCoding使って、爆速HTML&amp;CSSコーディング！&lt;/title&gt;
+		&lt;meta name="description" content="ZenCoding使って、爆速HTML&amp;amp;CSSコーディング！"&gt;
+		&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+		&lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"&gt;
+		&lt;link rel="stylesheet" href="css/reveal.min.css"&gt;
+		&lt;link rel="stylesheet" href="css/theme/default.css" id="theme"&gt;
+		&lt;link rel="stylesheet" href="lib/css/zenburn.css"&gt;
+		&lt;script type="text/javascript" src="reveal_init.js"&gt;&lt;/script&gt;
+		&lt;!--[if lt IE 9]&gt;
+			&lt;script type="text/javascript" src="lib/js/html5shiv.js"&gt;&lt;/script&gt;
+		&lt;![endif]--&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div class="reveal"&gt;
+			&lt;div class="slides"&gt;
+				&lt;section&gt;
+					&lt;h1&gt;ZenCoding使って、爆速HTML&CSSコーディング！&lt;/h1&gt;
+					&lt;h2&gt;姫路IT系勉強会 Vol.13&lt;/h2&gt;
+					&lt;p&gt;&lt;small&gt;Created by 
+							&lt;a href="http://twitter.com/aWebprogrammer"&gt;@aWebprogrammer&lt;/a&gt;
+						&lt;/small&gt;&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;ぷろふぃ～る&lt;/h2&gt;
+					&lt;ul&gt;
+						&lt;li class="fragment"&gt;女子よりも、PHPが好き!(但し、天然は除く)&lt;/li&gt;
+						&lt;li class="fragment"&gt;３度の飯よりWebネタで盛り上がるのが好き!&lt;/li&gt;
+						&lt;li class="fragment"&gt;ってか、飯食いません!(デフォルトが1日1食!)&lt;/li&gt;
+						&lt;li class="fragment"&gt;コーヒーとタバコで命をつないでます!&lt;/li&gt;
+						&lt;li class="fragment"&gt;一言で言うと、変ジニアです!!&lt;/li&gt;
+						&lt;li class="fragment"&gt;SEではなく、SHでござるぅ～～!!&lt;/li&gt;
+					&lt;/ul&gt;
+					&lt;h3 class="fragment"&gt;「ワテちゃん&hearts;」って読んでね(うふっ&hearts;)&lt;/h3&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル1&lt;/h2&gt;
+					&lt;p&gt;内容1&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル2&lt;/h2&gt;
+					&lt;p&gt;内容2&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル3&lt;/h2&gt;
+					&lt;p&gt;内容3&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル4&lt;/h2&gt;
+					&lt;p&gt;内容4&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル5&lt;/h2&gt;
+					&lt;p&gt;内容5&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル6&lt;/h2&gt;
+					&lt;p&gt;内容6&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル7&lt;/h2&gt;
+					&lt;p&gt;内容7&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル8&lt;/h2&gt;
+					&lt;p&gt;内容8&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル9&lt;/h2&gt;
+					&lt;p&gt;内容9&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル10&lt;/h2&gt;
+					&lt;p&gt;内容10&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル11&lt;/h2&gt;
+					&lt;p&gt;内容11&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル12&lt;/h2&gt;
+					&lt;p&gt;内容12&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル13&lt;/h2&gt;
+					&lt;p&gt;内容13&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル14&lt;/h2&gt;
+					&lt;p&gt;内容14&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル15&lt;/h2&gt;
+					&lt;p&gt;内容15&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル16&lt;/h2&gt;
+					&lt;p&gt;内容16&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル17&lt;/h2&gt;
+					&lt;p&gt;内容17&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル18&lt;/h2&gt;
+					&lt;p&gt;内容18&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル19&lt;/h2&gt;
+					&lt;p&gt;内容19&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;section&gt;
+					&lt;h2&gt;タイトル20&lt;/h2&gt;
+					&lt;p&gt;内容20&lt;/p&gt;
+				&lt;/section&gt;
+				&lt;script type="text/javascript" src="lib/js/head.min.js"&gt;&lt;/script&gt;
+				&lt;script type="text/javascript" src="js/reveal.min.js"&gt;&lt;/script&gt;
+				&lt;script type="text/javascript" src="reveal_init.js"&gt;&lt;/script&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+					</section>
+				</section>
+				<script src="lib/js/head.min.js"></script>
+				<script src="js/reveal.min.js"></script>
+				<script src="reveal_init.js"></script>
+			</div>
+		</div>
+	</body>
+</html>
