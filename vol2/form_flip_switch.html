@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>フリップスイッチ</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>フリップスイッチ</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+<p>
+モバイル端末でよく使われるフリップスイッチは、On/Offや設定するのに便利です。<br>
+切り替えにはスイッチをスライダーのようにドラッグするか、タップをします。<br>
+このコントロールを作るには、オプションを2つ用意したselect要素に「<strong>data-role=&quot;slider&quot;</strong>」を指定することでフリップスイッチとして表示されます。<br>
+<strong>最初のオプションは &quot;on&quot; 、次のオプションは &quot;off&quot;としてスタイルされるのでこの順番を守ってください。</strong>
+</p>
+
+
+<h2>実際に表示するとこんな感じ！</h2>
+<label for="flip_opt_in">フリップスイッチ(オプトイン):</label>
+<select name="slider" id="flip_opt_in" data-role="slider">
+	<option value="0">Off</option>
+	<option value="1">On</option>
+</select>
+
+<label for="flip_opt_out">フリップスイッチ(オプトアウト):</label>
+<select name="slider" id="flip_opt_out" data-role="slider">
+	<option value="0">Off</option>
+	<option value="1" selected>On</option>
+</select>
+
+
+<h2>ここのソースだよ</h2>
+<pre class="brush:html;">
+&lt;label for=&quot;flip_opt_in&quot;&gt;フリップスイッチ(オプトイン):&lt;/label&gt;
+&lt;select name=&quot;slider&quot; id=&quot;flip_opt_in&quot; data-role=&quot;slider&quot;&gt;
+	&lt;option value=&quot;0&quot;&gt;Off&lt;/option&gt;
+	&lt;option value=&quot;1&quot;&gt;On&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;label for=&quot;flip_opt_out&quot;&gt;フリップスイッチ(オプトアウト):&lt;/label&gt;
+&lt;select name=&quot;slider&quot; id=&quot;flip_opt_out&quot; data-role=&quot;slider&quot;&gt;
+	&lt;option value=&quot;0&quot;&gt;Off&lt;/option&gt;
+	&lt;option value=&quot;1&quot; selected&gt;On&lt;/option&gt;
+&lt;/select&gt;
+
+</pre>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

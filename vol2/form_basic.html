@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>フォームの基本</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>フォームの基本</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+<h2>フォームの概要</h2>
+<p>フォームはactionとmethodの指定されたformタグで囲まれていなければなりません。</p>
+<pre class="brush:html;">
+&lt;form action=&quot;form.php&quot; method=&quot;post&quot;&gt;
+&lt;!-- ここに入力用の各エレメントを配置してね --&gt;
+&lt;/form&gt;
+</pre>
+<p>
+QueryMobileにおいてフォームを作る場合でも、通常はgetやpostを指定して一般的なHTTP通信をsubmitするのが良いでしょう。<br>
+しかしながら1点だけ注意が必要なのは、各コントロールにつけられたidは、該当ページ内で一意なだけでなく、サイト全体でユニークでなければならないことです。<br>
+これはjQuery Mobileのナビゲーションシステムが、他のページを同一DOM上にロードする可能性があるためです。<br>
+そのためidの一意性を保つためには細心の注意が必要です。
+</p>
+
+<h2>アクセシビリティを保ったままラベルを隠す</h2>
+
+<p>
+アクセシビリティ確保の観点から、jQuery Mobileでは全てのフォーム要素に意味のあるlabelを付加するようお勧めします。<br>
+たとえば要素にplaceholder属性を指定してラベル代わりにしているような際は、ラベルを表示させたくないかもしれません。<br>
+その場合でも、ラベルに&quot;<strong>ui-hidden-accessible</strong>&quot;クラスを指定することなどで、<br>
+ラベルを作成するのが良いでしょう。<br>
+</p>
+<pre class="brush:html;">
+&lt;label for=&quot;username&quot; class=&quot;ui-hidden-accessible&quot;&gt;ユーザー名:&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; value=&quot;&quot; placeholder=&quot;ユーザー名を入力してね&quot;/&gt;
+</pre>
+<p>
+フィールドコンテナ内のラベルを隠し、なおかつレイアウトを詰めたい場合などは、コンテナ要素に&quot;<strong>ui-hide-label</strong>&quot;クラスを指定します。
+</p>
+<pre class="brush:html;">
+&lt;div data-role=&quot;fieldcontain&quot; class=&quot;ui-hide-label&quot;&gt;
+&lt;label for=&quot;username&quot;&gt;ユーザー名:&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; value=&quot;&quot; placeholder=&quot;ユーザー名を入力してね&quot;/&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>表示例</h3>
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="username">ユーザー名:</label>
+<input type="text" name="username" id="username" value="" placeholder="ユーザー名を入力してね" />
+</div>
+
+<h2>フォーム要素を使用不可にする</h2>
+<p>
+全てのjQuery Mobileウィジェットは、ネイティブコントロール同様に標準的なdisabled属性を指定することで使用不可の状態にすることが出来ますが<br>
+注意が必要なのはリンクボタンです。<br>
+buttonやinput要素により作られたボタンは使用不可にできますが、リンクに「<strong>data-role=&quot;button&quot;</strong>」を指定して作られたものはできません。<br>
+リンクボタンを使用不可状態にしたい場合は、該当要素に<strong>ui-disabled</strong>クラスをJavaScriptなどで追加してやれば、<br>
+使用不可の状態をつくることができます。<br>
+</p>
+
+<h3>表示例</h3>
+<div data-role="fieldcontain">
+	<label for="name_h">1行テキスト入力:</label>
+	<input type="text" name="name" id="name_h" value="" disabled="disabled" />
+</div>
+<div data-role="fieldcontain">
+	<label for="search_h">検索:</label>
+	<input type="search" name="search" id="search_h" value="" disabled="disabled" />
+</div>
+<div data-role="fieldcontain">
+	<fieldset data-role="controlgroup">
+		<legend>チェックボックスによる選択</legend>
+		<input type="checkbox" name="c" id="c_1" disabled="disabled" />
+		<label for="c_1">one</label>
+		<input type="checkbox" name="c" id="c_2" disabled="disabled" />
+		<label for="c_2">two</label>
+	</fieldset>
+</div>
+<div data-role="fieldcontain">
+	<label for="slider">進捗(%):</label>
+	<input type="range" name="slider" id="slider" value="87" min="0" max="100" disabled="disabled" />
+</div>
+<div data-role="fieldcontain">
+<label for="flip_opt_out">フリップスイッチ:</label>
+	<select name="slider" id="flip_opt_out" data-role="slider" disabled="disabled">
+		<option value="0">Off</option>
+		<option value="1">On</option>
+	</select>
+</div>
+<div data-role="fieldcontain">
+	<label for="textarea_h">複数行入力:</label>
+	<textarea name="textarea" id="textarea_h" disabled="disabled"></textarea>
+</div>
+
+
+
+
+<h2>フィールドコンテナ</h2>
+<p>
+特に広い画面上でのラベルとフォーム要素のスタイルを良くするため、各ラベルとフォーム要素をdivやfieldsetで囲み、<br>
+そこに「<strong>data-role=&quot;fieldcontain&quot;</strong>」で囲むことをお勧めします。<br>
+これによって、通常はラベルと入力フィールドは横方向に並べられます。<br>
+コンテナとなるブロック要素の幅が480ピクセル以下になると、自動で縦方向に並べるようになります。<br>
+さらにこの場合、コンテナは区切り線を下方向に付加します。<br>
+</p>
+
+<pre class="brush:html;">
+&lt;div data-role=&quot;fieldcontain&quot;&gt;
+	&lt;label for=&quot;name&quot;&gt;テキスト入力:&lt;/label&gt;
+	&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; value=&quot;&quot; /&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>表示例</h3>
+<div data-role="fieldcontain">
+<label for="name">テキスト入力:</label>
+<input type="text" name="name" id="name" value="" />
+</div>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

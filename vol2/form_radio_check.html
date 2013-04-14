@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ラジオボタン/チェックボックス</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>ラジオボタン/チェックボックス</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+<p>
+通常のinput/labelとしてマークアップされますが、jQuery Mobileはよりタッチパネルに適した形に自動で整形します。<br>
+スタイルが適用されるコントロールは、実際にはinput要素の上に重ねられたlabel要素が表示されます。<br>
+もしブラウザの問題などでlabelを重ねることに失敗した場合は、元々のコントロールが表示されることになります。
+</p>
+<p>
+ラジオボタンを作るにはinput要素のtype属性にradioを、チェックボックス作るにはinput要素のtype属性にcheckboxを指定し、<br>
+対応するlabelを記述します。<br>
+この時<strong>label要素はfor属性を使ってinputタグに指定したIDと対応させてください。</strong><br>
+ラジオボタンではlabelを各チェックボックスのテキストに使っているため、グループ全体の説明には<strong>filedsetのlegendを使うようお勧めします。</strong><br>
+最後にこのfieldsetに「<strong>data-role=&quot;controlgroup&quot;</strong>」を指定してラジオボタン/チェックボックスをグループ化します。<br>
+横方向のグループを作るには「<strong>data-type=&quot;horizontal&quot;</strong>」をfieldsetに指定してください。
+</p>
+
+
+<h2>実際に表示するとこんな感じ！</h2>
+<h3>ラジオ</h3>
+<fieldset data-role="controlgroup">
+	<legend>ラジオによる選択</legend>
+	<input type="radio" name="c" id="r_1" />
+	<label for="r_1">one</label>
+	<input type="radio" name="c" id="r_2" />
+	<label for="r_2">two</label>
+	<input type="radio" name="c" id="r_3" />
+	<label for="r_3">three</label>
+	<input type="radio" name="c" id="r_4" />
+	<label for="r_4">four</label>
+	<input type="radio" name="c" id="r_5" />
+	<label for="r_5">five</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="horizontal">
+	<legend>ラジオによる選択(横方法)</legend>
+	<input type="radio" name="c" id="rh_1" />
+	<label for="rh_1">one</label>
+	<input type="radio" name="c" id="rh_2" />
+	<label for="rh_2">two</label>
+	<input type="radio" name="c" id="rh_3" />
+	<label for="rh_3">three</label>
+	<input type="radio" name="c" id="rh_4" />
+	<label for="rh_4">four</label>
+	<input type="radio" name="c" id="rh_5" />
+	<label for="rh_5">five</label>
+</fieldset>
+
+<h3>チェックボックス</h3>
+
+<fieldset data-role="controlgroup">
+	<legend>チェックボックスによる選択</legend>
+	<input type="checkbox" name="c" id="c_1" />
+	<label for="c_1">one</label>
+	<input type="checkbox" name="c" id="c_2" />
+	<label for="c_2">two</label>
+	<input type="checkbox" name="c" id="c_3" />
+	<label for="c_3">three</label>
+	<input type="checkbox" name="c" id="c_4" />
+	<label for="c_4">four</label>
+	<input type="checkbox" name="c" id="c_5" />
+	<label for="c_5">five</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="horizontal">
+	<legend>チェックボックスによる選択(横方法)</legend>
+	<input type="checkbox" name="c" id="ch_1" />
+	<label for="ch_1">one</label>
+	<input type="checkbox" name="c" id="ch_2" />
+	<label for="ch_2">two</label>
+	<input type="checkbox" name="c" id="ch_3" />
+	<label for="ch_3">three</label>
+	<input type="checkbox" name="c" id="ch_4" />
+	<label for="ch_4">four</label>
+	<input type="checkbox" name="c" id="ch_5" />
+	<label for="ch_5">five</label>
+</fieldset>
+
+
+<h2>ここのソースだよ</h2>
+<pre class="brush:html;">
+&lt;h3&gt;ラジオ&lt;/h3&gt;
+&lt;fieldset data-role=&quot;controlgroup&quot;&gt;
+	&lt;legend&gt;ラジオによる選択&lt;/legend&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;r_1&quot; /&gt;
+	&lt;label for=&quot;r_1&quot;&gt;one&lt;/label&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;r_2&quot; /&gt;
+	&lt;label for=&quot;r_2&quot;&gt;two&lt;/label&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;r_3&quot; /&gt;
+	&lt;label for=&quot;r_3&quot;&gt;three&lt;/label&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;r_4&quot; /&gt;
+	&lt;label for=&quot;r_4&quot;&gt;four&lt;/label&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;r_5&quot; /&gt;
+	&lt;label for=&quot;r_5&quot;&gt;five&lt;/label&gt;
+&lt;/fieldset&gt;
+
+&lt;fieldset data-role=&quot;controlgroup&quot; data-type=&quot;horizontal&quot;&gt;
+	&lt;legend&gt;ラジオによる選択(横方法)&lt;/legend&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;rh_1&quot; /&gt;
+	&lt;label for=&quot;rh_1&quot;&gt;one&lt;/label&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;rh_2&quot; /&gt;
+	&lt;label for=&quot;rh_2&quot;&gt;two&lt;/label&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;rh_3&quot; /&gt;
+	&lt;label for=&quot;rh_3&quot;&gt;three&lt;/label&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;rh_4&quot; /&gt;
+	&lt;label for=&quot;rh_4&quot;&gt;four&lt;/label&gt;
+	&lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;rh_5&quot; /&gt;
+	&lt;label for=&quot;rh_5&quot;&gt;five&lt;/label&gt;
+&lt;/fieldset&gt;
+
+&lt;h3&gt;チェックボックス&lt;/h3&gt;
+
+&lt;fieldset data-role=&quot;controlgroup&quot;&gt;
+	&lt;legend&gt;チェックボックスによる選択&lt;/legend&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;c&quot; id=&quot;c_1&quot; /&gt;
+	&lt;label for=&quot;c_1&quot;&gt;one&lt;/label&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;c&quot; id=&quot;c_2&quot; /&gt;
+	&lt;label for=&quot;c_2&quot;&gt;two&lt;/label&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;c&quot; id=&quot;c_3&quot; /&gt;
+	&lt;label for=&quot;c_3&quot;&gt;three&lt;/label&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;c&quot; id=&quot;c_4&quot; /&gt;
+	&lt;label for=&quot;c_4&quot;&gt;four&lt;/label&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;c&quot; id=&quot;c_5&quot; /&gt;
+	&lt;label for=&quot;c_5&quot;&gt;five&lt;/label&gt;
+&lt;/fieldset&gt;
+
+&lt;fieldset data-role=&quot;controlgroup&quot; data-type=&quot;horizontal&quot;&gt;
+	&lt;legend&gt;チェックボックスによる選択(横方法)&lt;/legend&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;c&quot; id=&quot;ch_1&quot; /&gt;
+	&lt;label for=&quot;ch_1&quot;&gt;one&lt;/label&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;c&quot; id=&quot;ch_2&quot; /&gt;
+	&lt;label for=&quot;ch_2&quot;&gt;two&lt;/label&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;c&quot; id=&quot;ch_3&quot; /&gt;
+	&lt;label for=&quot;ch_3&quot;&gt;three&lt;/label&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;c&quot; id=&quot;ch_4&quot; /&gt;
+	&lt;label for=&quot;ch_4&quot;&gt;four&lt;/label&gt;
+	&lt;input type=&quot;checkbox&quot; name=&quot;c&quot; id=&quot;ch_5&quot; /&gt;
+	&lt;label for=&quot;ch_5&quot;&gt;five&lt;/label&gt;
+&lt;/fieldset&gt;
+
+</pre>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

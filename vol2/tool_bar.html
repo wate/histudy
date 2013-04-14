@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ツールバー</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>ツールバー</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+<p>
+jQuery Mobileに含まれるツールバーには、大別して2種類のツールバーがあります。ヘッダとフッタです。
+</p>
+<p>
+<dl>
+<dt>ヘッダー</dt>
+<dd>通常ページの最初の要素になります。そして一般的には、ページタイトルと、2つまでのボタンがついています。</dd>
+<dt>フッター</dt>
+<dd>通常ページの最後の要素になります。ヘッダよりも比較的自由に内容を記述できますが、やはり一般的にはテキストとボタンで構成されます。</dd>
+</dl>
+ヘッダやフッタなどのツールバーに、横方向に並べたナビゲーションやタブバーを持つことは、とても一般的なです。<br>
+jQuery Mobileは、項番無しリスト(ul)リンクにより作られる ナビゲーションバー ウィジェットを実装しています。
+</p>
+
+
+<h3>ヘッダー</h3>
+<p>ヘッダーは、通常ページタイトルと2つのボタンからなります。「<strong>data-role=&quot;header&quot;</strong>」を指定します。</p>
+<pre class="brush:html;">
+&lt;div data-role=&quot;header&quot;&gt;
+	&lt;a href=&quot;/&quot; data-icon=&quot;home&quot;&gt;Home&lt;/a&gt;
+	&lt;h1&gt;ヘッダー&lt;/h1&gt;
+	&lt;a href=&quot;http://jquerymobile.com/&quot; data-rel=&quot;external&quot; data-icon=&quot;forward&quot; data-iconpos=&quot;right&quot;&gt;本家&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>フッター</h3>
+<p>
+フッターは、ヘッダーよりも比較的自由に設定できるようになっており、「<strong>data-role=&quot;footer&quot;</strong>」を指定します。
+</p>
+
+<pre class="brush:html;">
+&lt;div data-role=&quot;footer&quot;&gt;
+    &lt;h4&gt;フッター&lt;/h4&gt;
+&lt;/div &gt;
+</pre>
+
+<h3>ツールバーの固定</h3>
+<p>
+固定ヘッダー、フッターを実現できます。<br>
+指定方法はヘッダー、フッターに対して、「<strong>data-position=&quot;fixed&quot;</strong>」を指定します。
+</p>
+<pre class="brush:html;">
+&lt;div data-role=&quot;header&quot; data-position=&quot;fixed&quot;&gt;
+    &lt;h1&gt;フッター&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div data-role=&quot;content&quot;&gt;
+    ここがコンテンツです！
+&lt;/div&gt;
+&lt;div data-role=&quot;footer&quot; data-position=&quot;fixed&quot;&gt;
+    &lt;h4&gt;フッター&lt;/h4&gt;
+&lt;/div &gt;
+</pre>
+
+<h3>ナビゲーションバー</h3>
+<p>ナビゲーションバーは、ヘッダーやフッター、カスタムツールバーに最大5つまでのアイコン付きボタンを配置することができます。<br>
+ナビゲーションバーは「<strong>data-role=&quot;navbar&quot;</strong>」を指定します。
+</p>
+
+<pre class="brush:html;">
+&lt;div data-role=&quot;navbar&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;/&quot; data-transition=&quot;slideup&quot;&gt;slideup&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;/&quot; data-transition=&quot;slidedown&quot;&gt;slidedown&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;/&quot; data-transition=&quot;pop&quot;&gt;pop&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;/&quot; data-transition=&quot;fade&quot;&gt;fade&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;/&quot; data-transition=&quot;flip&quot;&gt;flip&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>フルスクリーンモード</h3>
+<p>
+フルスクリーンモードを利用している際にツールバーを固定ポジションモードにすることで、コンテンツのエリアを画面いっぱいに利用することができます。<br>
+フルスクリーンモードにするには、ページコンテナに対して「<strong>data-fullscreen=&quot;true&quot;</strong>」を指定し、ツールバーを固定ポジションモードにします。
+</p>
+
+<pre class="brush:html;">
+&lt;div data-role=&quot;page&quot; data-fullscreen=&quot;true&quot;&gt;
+	&lt;div data-role=&quot;header&quot; data-position=&quot;fixed&quot;&gt;
+		&lt;h1&gt;フルスクリーンモード&lt;/h1&gt;
+	&lt;/div&gt;
+	&lt;div data-role=&quot;content&quot;&gt;
+		ここがコンテンツです！
+	&lt;/div&gt;
+	&lt;div data-role=&quot;footer&quot; data-position=&quot;fixed&quot;&gt;
+	&lt;h4&gt;ここがフッターです！&lt;/h4&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>セレクトメニュー</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>セレクトメニュー</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+<p>
+セレクトメニューは、ネイティブなselect要素から派生したものですが、実際のselect要素は見た目から消え、<br>
+完全に新しいjQuery Mobileによって生成された使い勝手のインターフェースに置き換わります。<br>
+置換されるコントロールはARIA互換となっており、デスクトップ上ではキーボードによる操作にも対応しています。<br>
+</p>
+
+
+<h2>実際に表示するとこんな感じ！</h2>
+<label for="select_1" class="select">セレクトによる選択:</label>
+<select name="select" id="select_1">
+	<option value="One">One</option>
+	<option value="Two">Two</option>
+	<option value="Three">Three</option>
+	<option value="Four">Four</option>
+	<option value="Five">Five</option>
+</select>
+
+<p>
+複数のセレクトメニューをグループ化するには、まずselect要素と対応するlabelを用意します。<br>
+そしてlabelのfor属性を、対応するselect要素のidと一致させます。<br>
+ラベルは各セレクトメニューに使われているため、<br>
+ここでは、<strong>セレクトメニュー群を囲むfieldsetの中にlegendを置くことをお勧めします。</strong><br>
+最後にこのfieldsetに「<strong>data-role=&quot;controlgroup&quot;</strong>」を指定してセレクトメニューをグループ化します。<br>
+横方向のグループを作るには「<strong>data-type=&quot;horizontal&quot;</strong>」をfieldsetに指定してください。<br>
+(※ここら辺はラジオボタンやチェックボックスと同じっす！)
+</p>
+
+<!-- 縦方向にグループ化されたセレクトメニュー -->
+<h2>複数のセレクトのグループ化</h2>
+<fieldset data-role="controlgroup">
+	<legend>生年月日:</legend>
+	<label for="year">年</label>
+	<select name="select" id="year">
+		<option value="2012">2012</option>
+		<option value="2011">2011</option>
+		<option value="2010">2010</option>
+		<option value="2009">2009</option>
+		<option value="2008">2008</option>
+		<option value="2007">2007</option>
+		<option value="2006">2006</option>
+		<option value="2005">2005</option>
+		<option value="2004">2004</option>
+		<option value="2003">2003</option>
+		<option value="2002">2002</option>
+		<option value="2001">2001</option>
+		<option value="2000">2000</option>
+	</select>
+	<label for="month">月</label>
+	<select name="month" id="month">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+	</select>
+	<label for="day">日</label>
+	<select name="select" id="day">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+		<option value="13">13</option>
+		<option value="14">14</option>
+		<option value="15">15</option>
+		<option value="16">16</option>
+		<option value="17">17</option>
+		<option value="18">18</option>
+		<option value="19">19</option>
+		<option value="20">20</option>
+		<option value="21">21</option>
+		<option value="22">22</option>
+		<option value="23">23</option>
+		<option value="24">24</option>
+		<option value="25">25</option>
+		<option value="26">26</option>
+		<option value="27">27</option>
+		<option value="28">28</option>
+		<option value="29">29</option>
+		<option value="31">31</option>
+	</select>
+</fieldset>
+
+<h2>「生年月日」縦に並んでると変なので横方向でグループ化！</h2>
+<fieldset data-role="controlgroup" data-type="horizontal">
+	<legend>生年月日:</legend>
+	<label for="year_h">年</label>
+	<select name="select" id="year_h">
+		<option value="2012">2012</option>
+		<option value="2011">2011</option>
+		<option value="2010">2010</option>
+		<option value="2009">2009</option>
+		<option value="2008">2008</option>
+		<option value="2007">2007</option>
+		<option value="2006">2006</option>
+		<option value="2005">2005</option>
+		<option value="2004">2004</option>
+		<option value="2003">2003</option>
+		<option value="2002">2002</option>
+		<option value="2001">2001</option>
+		<option value="2000">2000</option>
+	</select>
+	<label for="month_h">月</label>
+	<select name="month" id="month_h">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+	</select>
+	<label for="day_h">日</label>
+	<select name="select" id="day_h">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+		<option value="13">13</option>
+		<option value="14">14</option>
+		<option value="15">15</option>
+		<option value="16">16</option>
+		<option value="17">17</option>
+		<option value="18">18</option>
+		<option value="19">19</option>
+		<option value="20">20</option>
+		<option value="21">21</option>
+		<option value="22">22</option>
+		<option value="23">23</option>
+		<option value="24">24</option>
+		<option value="25">25</option>
+		<option value="26">26</option>
+		<option value="27">27</option>
+		<option value="28">28</option>
+		<option value="29">29</option>
+		<option value="31">31</option>
+	</select>
+</fieldset>
+
+
+<h2>ここのソースだよ</h2>
+<pre class="brush:html;">
+&lt;label for=&quot;select_1&quot; class=&quot;select&quot;&gt;セレクトによる選択:&lt;/label&gt;
+&lt;select name=&quot;select&quot; id=&quot;select_1&quot;&gt;
+	&lt;option value=&quot;One&quot;&gt;One&lt;/option&gt;
+	&lt;option value=&quot;Two&quot;&gt;Two&lt;/option&gt;
+	&lt;option value=&quot;Three&quot;&gt;Three&lt;/option&gt;
+	&lt;option value=&quot;Four&quot;&gt;Four&lt;/option&gt;
+	&lt;option value=&quot;Five&quot;&gt;Five&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;p&gt;
+複数のセレクトメニューをグループ化するには、まずselect要素と対応するlabelを用意します。&lt;br&gt;
+そしてlabelのfor属性を、対応するselect要素のidと一致させます。&lt;br&gt;
+ラベルは各セレクトメニューに使われているため、&lt;br&gt;
+ここでは、&lt;strong&gt;セレクトメニュー群を囲むfieldsetの中にlegendを置くことをお勧めします。&lt;/strong&gt;&lt;br&gt;
+最後にこのfieldsetに「&lt;strong&gt;data-role=&amp;quot;controlgroup&amp;quot;&lt;/strong&gt;」を指定してセレクトメニューをグループ化します。&lt;br&gt;
+横方向のグループを作るには「&lt;strong&gt;data-type=&amp;quot;horizontal&amp;quot;&lt;/strong&gt;」をfieldsetに指定してください。&lt;br&gt;
+(※ここら辺はラジオボタンやチェックボックスと同じっす！)
+&lt;/p&gt;
+
+&lt;!-- 縦方向にグループ化されたセレクトメニュー --&gt;
+&lt;h2&gt;複数のセレクトのグループ化&lt;/h2&gt;
+&lt;fieldset data-role=&quot;controlgroup&quot;&gt;
+	&lt;legend&gt;生年月日:&lt;/legend&gt;
+	&lt;label for=&quot;year&quot;&gt;年&lt;/label&gt;
+	&lt;select name=&quot;select&quot; id=&quot;year&quot;&gt;
+		&lt;option value=&quot;2012&quot;&gt;2012&lt;/option&gt;
+		&lt;option value=&quot;2011&quot;&gt;2011&lt;/option&gt;
+		&lt;option value=&quot;2010&quot;&gt;2010&lt;/option&gt;
+		&lt;option value=&quot;2009&quot;&gt;2009&lt;/option&gt;
+		&lt;option value=&quot;2008&quot;&gt;2008&lt;/option&gt;
+		&lt;option value=&quot;2007&quot;&gt;2007&lt;/option&gt;
+		&lt;option value=&quot;2006&quot;&gt;2006&lt;/option&gt;
+		&lt;option value=&quot;2005&quot;&gt;2005&lt;/option&gt;
+		&lt;option value=&quot;2004&quot;&gt;2004&lt;/option&gt;
+		&lt;option value=&quot;2003&quot;&gt;2003&lt;/option&gt;
+		&lt;option value=&quot;2002&quot;&gt;2002&lt;/option&gt;
+		&lt;option value=&quot;2001&quot;&gt;2001&lt;/option&gt;
+		&lt;option value=&quot;2000&quot;&gt;2000&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;label for=&quot;month&quot;&gt;月&lt;/label&gt;
+	&lt;select name=&quot;month&quot; id=&quot;month&quot;&gt;
+		&lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+		&lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+		&lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+		&lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+		&lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+		&lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+		&lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+		&lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+		&lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+		&lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+		&lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;
+		&lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;label for=&quot;day&quot;&gt;日&lt;/label&gt;
+	&lt;select name=&quot;select&quot; id=&quot;day&quot;&gt;
+		&lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+		&lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+		&lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+		&lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+		&lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+		&lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+		&lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+		&lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+		&lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+		&lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+		&lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;
+		&lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+		&lt;option value=&quot;13&quot;&gt;13&lt;/option&gt;
+		&lt;option value=&quot;14&quot;&gt;14&lt;/option&gt;
+		&lt;option value=&quot;15&quot;&gt;15&lt;/option&gt;
+		&lt;option value=&quot;16&quot;&gt;16&lt;/option&gt;
+		&lt;option value=&quot;17&quot;&gt;17&lt;/option&gt;
+		&lt;option value=&quot;18&quot;&gt;18&lt;/option&gt;
+		&lt;option value=&quot;19&quot;&gt;19&lt;/option&gt;
+		&lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;
+		&lt;option value=&quot;21&quot;&gt;21&lt;/option&gt;
+		&lt;option value=&quot;22&quot;&gt;22&lt;/option&gt;
+		&lt;option value=&quot;23&quot;&gt;23&lt;/option&gt;
+		&lt;option value=&quot;24&quot;&gt;24&lt;/option&gt;
+		&lt;option value=&quot;25&quot;&gt;25&lt;/option&gt;
+		&lt;option value=&quot;26&quot;&gt;26&lt;/option&gt;
+		&lt;option value=&quot;27&quot;&gt;27&lt;/option&gt;
+		&lt;option value=&quot;28&quot;&gt;28&lt;/option&gt;
+		&lt;option value=&quot;29&quot;&gt;29&lt;/option&gt;
+		&lt;option value=&quot;31&quot;&gt;31&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/fieldset&gt;
+
+&lt;h2&gt;「生年月日」縦に並んでると変なので横方向でグループ化！&lt;/h2&gt;
+&lt;fieldset data-role=&quot;controlgroup&quot; data-type=&quot;horizontal&quot;&gt;
+	&lt;legend&gt;生年月日:&lt;/legend&gt;
+	&lt;label for=&quot;year_h&quot;&gt;年&lt;/label&gt;
+	&lt;select name=&quot;select&quot; id=&quot;year_h&quot;&gt;
+		&lt;option value=&quot;2012&quot;&gt;2012&lt;/option&gt;
+		&lt;option value=&quot;2011&quot;&gt;2011&lt;/option&gt;
+		&lt;option value=&quot;2010&quot;&gt;2010&lt;/option&gt;
+		&lt;option value=&quot;2009&quot;&gt;2009&lt;/option&gt;
+		&lt;option value=&quot;2008&quot;&gt;2008&lt;/option&gt;
+		&lt;option value=&quot;2007&quot;&gt;2007&lt;/option&gt;
+		&lt;option value=&quot;2006&quot;&gt;2006&lt;/option&gt;
+		&lt;option value=&quot;2005&quot;&gt;2005&lt;/option&gt;
+		&lt;option value=&quot;2004&quot;&gt;2004&lt;/option&gt;
+		&lt;option value=&quot;2003&quot;&gt;2003&lt;/option&gt;
+		&lt;option value=&quot;2002&quot;&gt;2002&lt;/option&gt;
+		&lt;option value=&quot;2001&quot;&gt;2001&lt;/option&gt;
+		&lt;option value=&quot;2000&quot;&gt;2000&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;label for=&quot;month_h&quot;&gt;月&lt;/label&gt;
+	&lt;select name=&quot;month&quot; id=&quot;month_h&quot;&gt;
+		&lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+		&lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+		&lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+		&lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+		&lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+		&lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+		&lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+		&lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+		&lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+		&lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+		&lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;
+		&lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;label for=&quot;day_h&quot;&gt;日&lt;/label&gt;
+	&lt;select name=&quot;select&quot; id=&quot;day_h&quot;&gt;
+		&lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+		&lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+		&lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+		&lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+		&lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+		&lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+		&lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+		&lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+		&lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+		&lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+		&lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;
+		&lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+		&lt;option value=&quot;13&quot;&gt;13&lt;/option&gt;
+		&lt;option value=&quot;14&quot;&gt;14&lt;/option&gt;
+		&lt;option value=&quot;15&quot;&gt;15&lt;/option&gt;
+		&lt;option value=&quot;16&quot;&gt;16&lt;/option&gt;
+		&lt;option value=&quot;17&quot;&gt;17&lt;/option&gt;
+		&lt;option value=&quot;18&quot;&gt;18&lt;/option&gt;
+		&lt;option value=&quot;19&quot;&gt;19&lt;/option&gt;
+		&lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;
+		&lt;option value=&quot;21&quot;&gt;21&lt;/option&gt;
+		&lt;option value=&quot;22&quot;&gt;22&lt;/option&gt;
+		&lt;option value=&quot;23&quot;&gt;23&lt;/option&gt;
+		&lt;option value=&quot;24&quot;&gt;24&lt;/option&gt;
+		&lt;option value=&quot;25&quot;&gt;25&lt;/option&gt;
+		&lt;option value=&quot;26&quot;&gt;26&lt;/option&gt;
+		&lt;option value=&quot;27&quot;&gt;27&lt;/option&gt;
+		&lt;option value=&quot;28&quot;&gt;28&lt;/option&gt;
+		&lt;option value=&quot;29&quot;&gt;29&lt;/option&gt;
+		&lt;option value=&quot;31&quot;&gt;31&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/fieldset&gt;
+
+</pre>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>基本的なリストニュー</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>基本的なリストニュー</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+リストビューとは、その名の通り、複数の項目をリスト上に並べられたもので、<br>
+モバイルアプリケーションで必ずといって良いほど使われている定番のコンポーネントです。<br>
+リンクを含んだulタグに「<strong>data-role=&quot;listview&quot;</strong>」を指定することで実現できます
+
+
+<h2>実際に表示するとこんな感じ！</h2>
+<ul data-role="listview">
+	<li><a href="http://www.oreilly.co.jp/books/4873111250/" data-rel="external">DNS &amp; BIND クックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873111552/" data-rel="external">MySQLクックブック VOLUME 1</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873111668/" data-rel="external">MySQLクックブック VOLUME 2</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873111889/" data-rel="external">sendmailクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873112028/" data-rel="external">Perlクックブック 第2版 VOLUME 1</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873112036/" data-rel="external">Perlクックブック 第2版 VOLUME 2</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873112133/" data-rel="external">C/C++セキュアプログラミングクックブック VOLUME 2</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873112192/" data-rel="external">CSSクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873112249/" data-rel="external">C/C++セキュアプログラミングクックブック VOLUME 3</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873112427/" data-rel="external">Jakarta Commonsクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873112486/" data-rel="external">Linuxクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873112737/" data-rel="external">Jakarta Strutsクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873112850/" data-rel="external">Windowsサーバークックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/4873113032/" data-rel="external">C++クックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873112763/" data-rel="external">Python クックブック 第2版</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873113159/" data-rel="external">SQLクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873113197/" data-rel="external">Flashクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873113241/" data-rel="external">Rubyクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873113708/" data-rel="external">JavaScript &amp; DHTMLクックブック 第2版</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873113746/" data-rel="external">C#クックブック 第3版</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873113760/" data-rel="external">bashクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873113814/" data-rel="external">Apacheクックブック 第2版</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873113821/" data-rel="external">Windows PowerShellクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873114156/" data-rel="external">Adobe AIR クックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873114507/" data-rel="external">正規表現クックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873114682/" data-rel="external">jQueryクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873114835/" data-rel="external">Mathematicaクックブック</a></li>
+	<li><a href="http://www.oreilly.co.jp/books/9784873114941/" data-rel="external">JavaScriptクックブック</a></li>
+</ul>
+
+
+<h2>ここのソースだよ</h2>
+<pre class="brush:html;">
+&lt;ul data-role=&quot;listview&quot;&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873111250/&quot; data-rel=&quot;external&quot;&gt;DNS &amp;amp; BIND クックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873111552/&quot; data-rel=&quot;external&quot;&gt;MySQLクックブック VOLUME 1&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873111668/&quot; data-rel=&quot;external&quot;&gt;MySQLクックブック VOLUME 2&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873111889/&quot; data-rel=&quot;external&quot;&gt;sendmailクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873112028/&quot; data-rel=&quot;external&quot;&gt;Perlクックブック 第2版 VOLUME 1&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873112036/&quot; data-rel=&quot;external&quot;&gt;Perlクックブック 第2版 VOLUME 2&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873112133/&quot; data-rel=&quot;external&quot;&gt;C/C++セキュアプログラミングクックブック VOLUME 2&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873112192/&quot; data-rel=&quot;external&quot;&gt;CSSクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873112249/&quot; data-rel=&quot;external&quot;&gt;C/C++セキュアプログラミングクックブック VOLUME 3&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873112427/&quot; data-rel=&quot;external&quot;&gt;Jakarta Commonsクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873112486/&quot; data-rel=&quot;external&quot;&gt;Linuxクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873112737/&quot; data-rel=&quot;external&quot;&gt;Jakarta Strutsクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873112850/&quot; data-rel=&quot;external&quot;&gt;Windowsサーバークックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/4873113032/&quot; data-rel=&quot;external&quot;&gt;C++クックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873112763/&quot; data-rel=&quot;external&quot;&gt;Python クックブック 第2版&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873113159/&quot; data-rel=&quot;external&quot;&gt;SQLクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873113197/&quot; data-rel=&quot;external&quot;&gt;Flashクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873113241/&quot; data-rel=&quot;external&quot;&gt;Rubyクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873113708/&quot; data-rel=&quot;external&quot;&gt;JavaScript &amp;amp; DHTMLクックブック 第2版&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873113746/&quot; data-rel=&quot;external&quot;&gt;C#クックブック 第3版&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873113760/&quot; data-rel=&quot;external&quot;&gt;bashクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873113814/&quot; data-rel=&quot;external&quot;&gt;Apacheクックブック 第2版&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873113821/&quot; data-rel=&quot;external&quot;&gt;Windows PowerShellクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873114156/&quot; data-rel=&quot;external&quot;&gt;Adobe AIR クックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873114507/&quot; data-rel=&quot;external&quot;&gt;正規表現クックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873114682/&quot; data-rel=&quot;external&quot;&gt;jQueryクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873114835/&quot; data-rel=&quot;external&quot;&gt;Mathematicaクックブック&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/9784873114941/&quot; data-rel=&quot;external&quot;&gt;JavaScriptクックブック&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</pre>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

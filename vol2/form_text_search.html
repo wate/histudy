@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>テキスト入力/検索ボックス</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>テキスト入力/検索ボックス</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+<p>
+テキスト入力ボックスとテキストエリアは、通常のHTML要素でコーディングされるとjQuery Mobileによって自動的に、<br>
+よりもモバイル端末で見栄えが良く使いやすいように整形されます。
+</p>
+<p>
+デフォルトのスタイルでは、横幅は親要素に対して100%となり、ラベルは別の行に配置されます。<br>
+これらをコンテナ要素(divタグなど)で囲み、そこに「<strong>data-role=&quot;fieldcontain&quot;</strong>」属性を指定することで、見た目を制御することも可能です。
+</p>
+
+
+<h2>実際に表示するとこんな感じ！</h2>
+<h3>デフォルト</h3>
+
+<label for="name">1行テキスト入力:</label>
+<input type="text" name="name_a" id="name" value="" />
+
+<label for="textarea">複数行入力:</label>
+<textarea name="textarea" id="textarea"></textarea>
+
+<label for="search">検索ボックス(検索ボックスは、角の丸い入力域で、文字列が入力されるとクリアのために「x」アイコンが現れる新しい種類のHTMLです。):</label>
+<input type="search" name="search" id="search" value="" />
+
+<h3>fieldcontainを使うとこんな感じ！</h3>
+
+<div data-role="fieldcontain">
+	<label for="name_h">1行テキスト入力:</label>
+	<input type="text" name="name" id="name_h" value=""  />
+</div>
+
+<div data-role="fieldcontain">
+	<label for="textarea_h">複数行入力:</label>
+	<textarea name="textarea" id="textarea_h"></textarea>
+</div>
+
+<div data-role="fieldcontain">
+	<label for="search_h">検索:</label>
+	<input type="search" name="search" id="search_h" value="" />
+</div>
+
+
+<h2>ここのソースだよ</h2>
+<pre class="brush:html;">
+&lt;h3&gt;デフォルト&lt;/h3&gt;
+
+&lt;label for=&quot;name&quot;&gt;1行テキスト入力:&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;name_a&quot; id=&quot;name&quot; value=&quot;&quot; /&gt;
+
+&lt;label for=&quot;textarea&quot;&gt;複数行入力:&lt;/label&gt;
+&lt;textarea name=&quot;textarea&quot; id=&quot;textarea&quot;&gt;&lt;/textarea&gt;
+
+&lt;label for=&quot;search&quot;&gt;検索ボックス(検索ボックスは、角の丸い入力域で、文字列が入力されるとクリアのために「x」アイコンが現れる新しい種類のHTMLです。):&lt;/label&gt;
+&lt;input type=&quot;search&quot; name=&quot;search&quot; id=&quot;search&quot; value=&quot;&quot; /&gt;
+
+&lt;h3&gt;fieldcontainを使うとこんな感じ！&lt;/h3&gt;
+
+&lt;div data-role=&quot;fieldcontain&quot;&gt;
+	&lt;label for=&quot;name_h&quot;&gt;1行テキスト入力:&lt;/label&gt;
+	&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name_h&quot; value=&quot;&quot;  /&gt;
+&lt;/div&gt;
+
+&lt;div data-role=&quot;fieldcontain&quot;&gt;
+	&lt;label for=&quot;textarea_h&quot;&gt;複数行入力:&lt;/label&gt;
+	&lt;textarea name=&quot;textarea&quot; id=&quot;textarea_h&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+&lt;div data-role=&quot;fieldcontain&quot;&gt;
+	&lt;label for=&quot;search_h&quot;&gt;検索:&lt;/label&gt;
+	&lt;input type=&quot;search&quot; name=&quot;search&quot; id=&quot;search_h&quot; value=&quot;&quot; /&gt;
+&lt;/div&gt;
+
+</pre>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

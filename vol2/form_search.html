@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>検索ボックス</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="" data-rel="back">戻る</a>
+<h1>検索ボックス</h1>
+
+</div>
+<div data-role="content">
+検索ボックス
+
+<h3>表示</h3>
+<label for="search_a">検索:</label>
+<input type="search" name="search" id="search_a" value="" />
+
+
+<div data-role="fieldcontain">
+<label for="search_b">検索:</label>
+<input type="search" name="search" id="search_b" value="" />
+</div>
+
+
+
+<h3>ソース</h3>
+<pre class="brush:html;">
+&lt;label for=&quot;search_a&quot;&gt;検索:&lt;/label&gt;
+&lt;input type=&quot;search&quot; name=&quot;search&quot; id=&quot;search_a&quot; value=&quot;&quot; /&gt;
+
+
+&lt;div data-role=&quot;fieldcontain&quot;&gt;
+&lt;label for=&quot;search_b&quot;&gt;検索:&lt;/label&gt;
+&lt;input type=&quot;search&quot; name=&quot;search&quot; id=&quot;search_b&quot; value=&quot;&quot; /&gt;
+&lt;/div&gt;
+
+</pre>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<h4>フッター</h4>
+
+</div>
+</div>
+</body>
+</html>

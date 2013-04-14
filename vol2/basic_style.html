@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>基本的なスタイル</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>基本的なスタイル</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+jQuery Mobileは、通常のHTMLタグを以下のようなスタイルを初期状態で設定しています。
+
+
+<h2>ヘッダー(H1～H6)</h2>
+
+<h1>H1でごわす！</h1>
+<h2>H2だよ！</h2>
+<h3>H3です</h3>
+<h4>H4かな？</h4>
+<h5>H5って使ってる？</h5>
+<h6>H6なんて使った記憶がねぇ・・・・</h6>
+
+<h2>番号なしリスト</h2>
+<ul>
+<li>番号なしリスト1</li>
+<li>番号なしリスト2</li>
+<li>番号なしリスト3</li>
+</ul>
+
+<h2>番号付きリスト</h2>
+<ol>
+<li>番号付きリスト1</li>
+<li>番号付きリスト2</li>
+<li>番号付きリスト3</li>
+</ol>
+
+<h2>定義済みリスト</h2>
+<dl title="定義済みリスト">
+<dt>定義語1</dt>
+<dd>定義語1の説明</dd>
+<dt>定義語2</dt>
+<dd>定義語2の説明</dd>
+</dl>
+
+<h2>テーブル</h2>
+
+<table summary="table" width="300">
+<caption>キャプション</caption>
+<tr>
+<th scope="col" width="100">----</th>
+<th scope="col" width="100">列A</th>
+<th scope="col" width="100">列B</th>
+</tr>
+<tr>
+<th scope="row" width="100">行1</th>
+<td width="100">A1</td>
+<td width="100">B1</td>
+</tr>
+<tr>
+<th scope="row" width="100">行2</th>
+<td width="100">A2</td>
+<td width="100">B2</td>
+</tr>
+<tr>
+<th scope="row" width="100">行3</th>
+<td width="100">A3</td>
+<td width="100">B3</td>
+</tr>
+</table>
+
+<div data-role="collapsible">
+<h2>このページのソース</h2>
+<pre class="brush: html;">
+&lt;h2&gt;ヘッダー(H1～H6)&lt;/h2&gt;
+
+&lt;h1&gt;H1でごわす！&lt;/h1&gt;
+&lt;h2&gt;H2だよ！&lt;/h2&gt;
+&lt;h3&gt;H3です&lt;/h3&gt;
+&lt;h4&gt;H4かな？&lt;/h4&gt;
+&lt;h5&gt;H5って使ってる？&lt;/h5&gt;
+&lt;h6&gt;H6なんて使った記憶がねぇ・・・・&lt;/h6&gt;
+
+&lt;h2&gt;番号なしリスト&lt;/h2&gt;
+&lt;ul&gt;
+	&lt;li&gt;番号なしリスト1&lt;/li&gt;
+	&lt;li&gt;番号なしリスト2&lt;/li&gt;
+	&lt;li&gt;番号なしリスト3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;番号付きリスト&lt;/h2&gt;
+&lt;ol&gt;
+	&lt;li&gt;番号付きリスト1&lt;/li&gt;
+	&lt;li&gt;番号付きリスト2&lt;/li&gt;
+	&lt;li&gt;番号付きリスト3&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;定義済みリスト&lt;/h2&gt;
+&lt;dl title=&quot;定義済みリスト&quot;&gt;
+	&lt;dt&gt;定義語1&lt;/dt&gt;
+	&lt;dd&gt;定義語1の説明&lt;/dd&gt;
+	&lt;dt&gt;定義語2&lt;/dt&gt;
+	&lt;dd&gt;定義語2の説明&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2&gt;テーブル&lt;/h2&gt;
+
+&lt;table summary=&quot;table&quot; width=&quot;300&quot;&gt;
+	&lt;caption&gt;キャプション&lt;/caption&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;col&quot; width=&quot;100&quot;&gt;----&lt;/th&gt;
+		&lt;th scope=&quot;col&quot; width=&quot;100&quot;&gt;列A&lt;/th&gt;
+		&lt;th scope=&quot;col&quot; width=&quot;100&quot;&gt;列B&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot; width=&quot;100&quot;&gt;行1&lt;/th&gt;
+		&lt;td width=&quot;100&quot;&gt;A1&lt;/td&gt;
+		&lt;td width=&quot;100&quot;&gt;B1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;th scope=&quot;row&quot; width=&quot;100&quot;&gt;行2&lt;/th&gt;
+		&lt;td width=&quot;100&quot;&gt;A2&lt;/td&gt;
+		&lt;td width=&quot;100&quot;&gt;B2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+	&lt;th scope=&quot;row&quot; width=&quot;100&quot;&gt;行3&lt;/th&gt;
+		&lt;td width=&quot;100&quot;&gt;A3&lt;/td&gt;
+		&lt;td width=&quot;100&quot;&gt;B3&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+
+</div>
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

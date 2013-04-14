@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>レイアウトグリッド</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>レイアウトグリッド</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+<p>
+モバイル端末では画面の横幅が広くないため、通常は複数カラムのレイアウトは推奨されません。<br>
+しかし、時によっては、ちょっとした要素を横並びにレイアウトしたい場合もあるでしょう。<br>
+<br>
+jQuery Mobileではui-gridというCSSベースの簡単なブロックスタイル用クラスを用意しています。<br>
+現在4種類のレイアウトが用意されていて、用途によって使い分けることができます。
+</p>
+<ul>
+	<li>2カラム(ui-grid-aクラスを使用)</li>
+	<li>3カラム(ui-grid-bクラスを使用)</li>
+	<li>4カラム(ui-grid-cクラスを使用)</li>
+	<li>5カラム(ui-grid-dクラスを使用)</li>
+</ul>
+<p>
+グリッドは横幅が100%で、枠線や背景が無い状態、そして、paddingやmarginも設定されていないため<br>
+内包する要素のスタイルを邪魔することはありません。
+</p>
+<p>
+グリッドコンテナには、横並びになるブロック要素を内包させます。<br>
+内包するブロックに順に
+</p>
+<ul>
+	<li>ui-block-a</li>
+	<li>ui-block-b</li>
+	<li>ui-block-c</li>
+	<li>ui-block-d</li>
+	<li>ui-block-e</li>
+</ul>
+<p>
+のクラスを順に指定していきます。<br>
+※最初の子要素に指定される「<strong>ui-block-a</strong>」は、新たな行を開始するものであるためfloatを解除します。<br>
+<strong>(後述の複数行グリッドを参照)</strong>
+</p>
+
+
+<h2>実際に表示するとこんな感じ！</h2>
+<h3>2カラム</h3>
+<div class="ui-grid-a">
+    <div class="ui-block-a ui-bar-a" style="height:50px;">Block A</div>
+    <div class="ui-block-b ui-bar-b" style="height:50px;">Block B</div>
+</div>
+
+<h3>3カラム</h3>
+<div class="ui-grid-b">
+    <div class="ui-block-a ui-bar-a" style="height:50px;">Block A</div>
+    <div class="ui-block-b ui-bar-b" style="height:50px;">Block B</div>
+    <div class="ui-block-c ui-bar-c" style="height:50px;">Block C</div>
+</div>
+
+<h3>4カラム</h3>
+<div class="ui-grid-c">
+    <div class="ui-block-a ui-bar-a" style="height:50px;">Block A</div>
+    <div class="ui-block-b ui-bar-b" style="height:50px;">Block B</div>
+    <div class="ui-block-c ui-bar-c" style="height:50px;">Block C</div>
+    <div class="ui-block-d ui-bar-d" style="height:50px;">Block D</div>
+</div>
+
+<h3>5カラム</h3>
+<div class="ui-grid-d">
+    <div class="ui-block-a ui-bar-a" style="height:50px;">Block A</div>
+    <div class="ui-block-b ui-bar-b" style="height:50px;">Block B</div>
+    <div class="ui-block-c ui-bar-c" style="height:50px;">Block C</div>
+    <div class="ui-block-d ui-bar-d" style="height:50px;">Block D</div>
+    <div class="ui-block-e ui-bar-e" style="height:50px;">Block E</div>
+</div>
+
+
+<h3>複数行のレイアウトグリッド</h3>
+<div class="ui-grid-d">
+    <div class="ui-block-a ui-bar-a" style="height:50px;">Block A</div>
+    <div class="ui-block-b ui-bar-b" style="height:50px;">Block B</div>
+    <div class="ui-block-c ui-bar-c" style="height:50px;">Block C</div>
+    <div class="ui-block-d ui-bar-d" style="height:50px;">Block D</div>
+    <div class="ui-block-e ui-bar-e" style="height:50px;">Block E</div>
+	<!-- ここで改行 -->
+    <div class="ui-block-a ui-bar-a" style="height:50px;">Block A</div>
+    <div class="ui-block-b ui-bar-b" style="height:50px;">Block B</div>
+    <div class="ui-block-c ui-bar-c" style="height:50px;">Block C</div>
+    <div class="ui-block-d ui-bar-d" style="height:50px;">Block D</div>
+    <div class="ui-block-e ui-bar-e" style="height:50px;">Block E</div>
+	<!-- ここで改行 -->
+    <div class="ui-block-a ui-bar-a" style="height:50px;">Block A</div>
+    <div class="ui-block-b ui-bar-b" style="height:50px;">Block B</div>
+    <div class="ui-block-c ui-bar-c" style="height:50px;">Block C</div>
+    <div class="ui-block-d ui-bar-d" style="height:50px;">Block D</div>
+    <div class="ui-block-e ui-bar-e" style="height:50px;">Block E</div>
+</div>
+
+
+
+<h2>ここのソースだよ</h2>
+<pre class="brush:html;">
+&lt;h3&gt;2カラム&lt;/h3&gt;
+&lt;div class=&quot;ui-grid-a&quot;&gt;
+    &lt;div class=&quot;ui-block-a ui-bar-a&quot; style=&quot;height:50px;&quot;&gt;Block A&lt;/div&gt;
+    &lt;div class=&quot;ui-block-b ui-bar-b&quot; style=&quot;height:50px;&quot;&gt;Block B&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;3カラム&lt;/h3&gt;
+&lt;div class=&quot;ui-grid-b&quot;&gt;
+    &lt;div class=&quot;ui-block-a ui-bar-a&quot; style=&quot;height:50px;&quot;&gt;Block A&lt;/div&gt;
+    &lt;div class=&quot;ui-block-b ui-bar-b&quot; style=&quot;height:50px;&quot;&gt;Block B&lt;/div&gt;
+    &lt;div class=&quot;ui-block-c ui-bar-c&quot; style=&quot;height:50px;&quot;&gt;Block C&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;4カラム&lt;/h3&gt;
+&lt;div class=&quot;ui-grid-c&quot;&gt;
+    &lt;div class=&quot;ui-block-a ui-bar-a&quot; style=&quot;height:50px;&quot;&gt;Block A&lt;/div&gt;
+    &lt;div class=&quot;ui-block-b ui-bar-b&quot; style=&quot;height:50px;&quot;&gt;Block B&lt;/div&gt;
+    &lt;div class=&quot;ui-block-c ui-bar-c&quot; style=&quot;height:50px;&quot;&gt;Block C&lt;/div&gt;
+    &lt;div class=&quot;ui-block-d ui-bar-d&quot; style=&quot;height:50px;&quot;&gt;Block D&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3&gt;5カラム&lt;/h3&gt;
+&lt;div class=&quot;ui-grid-d&quot;&gt;
+    &lt;div class=&quot;ui-block-a ui-bar-a&quot; style=&quot;height:50px;&quot;&gt;Block A&lt;/div&gt;
+    &lt;div class=&quot;ui-block-b ui-bar-b&quot; style=&quot;height:50px;&quot;&gt;Block B&lt;/div&gt;
+    &lt;div class=&quot;ui-block-c ui-bar-c&quot; style=&quot;height:50px;&quot;&gt;Block C&lt;/div&gt;
+    &lt;div class=&quot;ui-block-d ui-bar-d&quot; style=&quot;height:50px;&quot;&gt;Block D&lt;/div&gt;
+    &lt;div class=&quot;ui-block-e ui-bar-e&quot; style=&quot;height:50px;&quot;&gt;Block E&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;h3&gt;複数行のレイアウトグリッド&lt;/h3&gt;
+&lt;div class=&quot;ui-grid-d&quot;&gt;
+    &lt;div class=&quot;ui-block-a ui-bar-a&quot; style=&quot;height:50px;&quot;&gt;Block A&lt;/div&gt;
+    &lt;div class=&quot;ui-block-b ui-bar-b&quot; style=&quot;height:50px;&quot;&gt;Block B&lt;/div&gt;
+    &lt;div class=&quot;ui-block-c ui-bar-c&quot; style=&quot;height:50px;&quot;&gt;Block C&lt;/div&gt;
+    &lt;div class=&quot;ui-block-d ui-bar-d&quot; style=&quot;height:50px;&quot;&gt;Block D&lt;/div&gt;
+    &lt;div class=&quot;ui-block-e ui-bar-e&quot; style=&quot;height:50px;&quot;&gt;Block E&lt;/div&gt;
+	&lt;!-- ここで改行 --&gt;
+    &lt;div class=&quot;ui-block-a ui-bar-a&quot; style=&quot;height:50px;&quot;&gt;Block A&lt;/div&gt;
+    &lt;div class=&quot;ui-block-b ui-bar-b&quot; style=&quot;height:50px;&quot;&gt;Block B&lt;/div&gt;
+    &lt;div class=&quot;ui-block-c ui-bar-c&quot; style=&quot;height:50px;&quot;&gt;Block C&lt;/div&gt;
+    &lt;div class=&quot;ui-block-d ui-bar-d&quot; style=&quot;height:50px;&quot;&gt;Block D&lt;/div&gt;
+    &lt;div class=&quot;ui-block-e ui-bar-e&quot; style=&quot;height:50px;&quot;&gt;Block E&lt;/div&gt;
+	&lt;!-- ここで改行 --&gt;
+    &lt;div class=&quot;ui-block-a ui-bar-a&quot; style=&quot;height:50px;&quot;&gt;Block A&lt;/div&gt;
+    &lt;div class=&quot;ui-block-b ui-bar-b&quot; style=&quot;height:50px;&quot;&gt;Block B&lt;/div&gt;
+    &lt;div class=&quot;ui-block-c ui-bar-c&quot; style=&quot;height:50px;&quot;&gt;Block C&lt;/div&gt;
+    &lt;div class=&quot;ui-block-d ui-bar-d&quot; style=&quot;height:50px;&quot;&gt;Block D&lt;/div&gt;
+    &lt;div class=&quot;ui-block-e ui-bar-e&quot; style=&quot;height:50px;&quot;&gt;Block E&lt;/div&gt;
+&lt;/div&gt;
+
+</pre>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

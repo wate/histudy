@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>開閉式コンテンツ</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>開閉式コンテンツ</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+開閉式のコンテンツを作成するには、コンテナとなる要素に対して「<strong>data-role=&quot;collapsible&quot;</strong>」を指定します。<br>
+コンテナ直下には、ヘッダ要素(h1～h6のどれか)を追加します。<br>
+jQuery Mobileはこのヘッダ要素をクリック可能なボタンのように整形し、左端に&quot;＋&quot;アイコンを追加します。<br>
+コンテンツ部分のテーマ変更には「<strong>data-content-theme=&quot;a～e&quot;</strong>」を指定します。<br>
+また、開閉式コンテンツは入れ子にすることもできます。<br>
+
+
+<h2>実際に表示するとこんな感じ！</h2>
+<div data-role="collapsible" data-content-theme="e" data-theme="e">
+	<h3>開閉式コンテンツ</h3>
+	<p>
+	何も指定しない場合は初期状態で閉じているため、<br>
+	「<strong>data-collapsed=&quot;false&quot;</strong>」を指定することにより<br>
+	初期状態で開いた状態にすることができます。<br>
+	コンテンツ部分は「<strong>data-content-theme=&quot;a-e&quot;</strong>」を指定することにより色を変更することが可能です。
+	</p>
+</div>
+
+
+<div data-role="collapsible" data-collapsed="false" data-content-theme="d" data-theme="d">
+	<h3>開閉式コンテンツ</h3>
+	<p>
+	何も指定しない場合は初期状態で閉じているため、<br>
+	「<strong>data-collapsed=&quot;false&quot;</strong>」を指定することにより<br>
+	初期状態で開いた状態にすることができます。<br>
+	コンテンツ部分は「<strong>data-content-theme=&quot;a-e&quot;</strong>」を指定することにより色を変更することが可能です。
+	</p>
+</div>
+
+
+
+
+<h2>ここのソースだよ</h2>
+<pre class="brush:html;">
+&lt;div data-role=&quot;collapsible&quot; data-content-theme=&quot;e&quot; data-theme=&quot;e&quot;&gt;
+	&lt;h3&gt;開閉式コンテンツ&lt;/h3&gt;
+	&lt;p&gt;
+	何も指定しない場合は初期状態で閉じているため、&lt;br&gt;
+	「&lt;strong&gt;data-collapsed=&amp;quot;false&amp;quot;&lt;/strong&gt;」を指定することにより&lt;br&gt;
+	初期状態で開いた状態にすることができます。&lt;br&gt;
+	コンテンツ部分は「&lt;strong&gt;data-content-theme=&amp;quot;a-e&amp;quot;&lt;/strong&gt;」を指定することにより色を変更することが可能です。
+	&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;div data-role=&quot;collapsible&quot; data-collapsed=&quot;false&quot; data-content-theme=&quot;d&quot; data-theme=&quot;d&quot;&gt;
+	&lt;h3&gt;開閉式コンテンツ&lt;/h3&gt;
+	&lt;p&gt;
+	何も指定しない場合は初期状態で閉じているため、&lt;br&gt;
+	「&lt;strong&gt;data-collapsed=&amp;quot;false&amp;quot;&lt;/strong&gt;」を指定することにより&lt;br&gt;
+	初期状態で開いた状態にすることができます。&lt;br&gt;
+	コンテンツ部分は「&lt;strong&gt;data-content-theme=&amp;quot;a-e&amp;quot;&lt;/strong&gt;」を指定することにより色を変更することが可能です。
+	&lt;/p&gt;
+&lt;/div&gt;
+
+
+</pre>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

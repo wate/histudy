@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>何はなくとも、まず魔法の言葉！</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="" data-rel="back">戻る</a>
+<h1>何はなくとも、まず魔法の言葉！</h1>
+
+</div>
+<div data-role="content">
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<h2>viewport</h2>
+先ほどのコード例で head 要素内に viewport というメタ要素が指定されていることに注意してください。これは、ブラウザに対してページを表示する際のズームレベルや方向を指示するためのものです。この指定が無いと、多くのブラウザは900ピクセル程度の仮想ページを表示します。しかしこれはデスクトップ用につくられたサイトを表示するのに適した大きさで、jQuery Mobileでつくられたサイトにはズームアウトしすぎでしょう。この viewport に content=“width=device-width, initial-scale=1” と指定することで、横幅はデバイス画面の持つピクセル数にあわせられます。
+<pre class="brush: html;">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</pre>
+この設定によって、ユーザが自分で最適に見られるようズームするなどの動作が阻害されることはありません。わずかにiOS上で端末の向きを変えた際に適切な横幅が用いられないという問題がありますが、将来的なリリースで修正されることを期待します。この viewport 設定でズーム機能を停止することも可能ですが、それはつくられるサイト特性上の話であり、ライブラリは関知しません。
+
+<h2>ページコンテナ</h2>
+<pre class="brush: html;">
+<div data-role="page"> 
+<div data-role="header">
+ここがヘッダーになります
+</div> 
+<div data-role="content">
+ここがコンテンツ部分です！
+</div> 
+<div data-role="footer">
+ここがフッターになります
+</div> 
+</div></pre>
+
+</div>
+<div data-role="footer" data-position="fixed">
+<h4>フッター</h4>
+
+</div>
+</div>
+</body>
+</html>

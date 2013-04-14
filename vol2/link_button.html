@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ボタン</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>ボタン</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+<p>
+jQuery Mobileのボタンはモバイル端末上でボタンとして認識されやすいようなスタイル、また使いやすいよう最適化されています。<br>
+ボタンには大きく分けて２つの指定方法があります。<br>
+指定方法が違うというだけで見た目は同じです。
+</p>
+<ul>
+	<li>フォームボタン</li>
+	<li>リンクボタン</li>
+</ul>
+<p>
+フォームボタンはbutton要素、input要素のsubmit,reset,button,imageのいずれかが指定されていればボタンとして自動的に整形されます。<br>
+リンクボタンはリンクに「<strong>data-role=&quot;button&quot;</strong>」を指定することでボタンとして整形されます。
+</p>
+
+<p>
+jQuery Mobileのボタンはモバイル端末上でボタンとして認識されやすいようなスタイル、また使いやすいよう最適化されています。<br>
+ボタンには大きく分けて２つの指定方法があります。<br>
+指定方法が違うというだけで見た目は同じです。
+</p>
+<ul>
+<li>フォームボタン</li>
+<li>リンクボタン</li>
+</ul>
+<p>
+フォームボタンはbutton要素、input要素のsubmit,reset,button,imageのいずれかが指定されていればボタンとして自動的に整形されます。<br>
+リンクボタンはリンクに「<strong>data-role=&quot;button&quot;</strong>」を指定することでボタンとして整形されます。
+</p>
+
+<h2>フォームボタン</h2>
+
+<button>button要素</button>
+<input type="button" value="input type button" />
+<input type="submit" value="input type submit" />
+<input type="reset" value="input type reset" />
+<input type="image" src="image/icon/picture4-87311-014-9.png" alt="イメージ" value="input type image" />
+
+
+<h3>ソース</h3>
+<pre class="brush:html;">
+&lt;button&gt;button要素&lt;/button&gt;
+&lt;input type=&quot;button&quot; value=&quot;input type button&quot; /&gt;
+&lt;input type=&quot;submit&quot; value=&quot;input type submit&quot; /&gt;
+&lt;input type=&quot;reset&quot; value=&quot;input type reset&quot; /&gt;
+&lt;input type=&quot;image&quot; src=&quot;image/icon/picture4-87311-014-9.png&quot; alt=&quot;イメージ&quot; value=&quot;input type image&quot; /&gt;
+</pre>
+
+<h2>リンクボタン</h2>
+<a href="#" data-role="button">リンクボタンです！</a>
+
+<h3>ソース</h3>
+<pre class="brush:html;">
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;リンクボタンです！&lt;/a&gt;
+</pre>
+
+
+
+<h2>ボタンのレイアウト</h2>
+<p>
+ボタンには4つのレイアウト方法があります。
+デフォルトは何も指定しないで表示した場合です。
+</p>
+<ul>
+	<li>ブロックレベル(Default)</li>
+	<li>インラインボタン</li>
+	<li>グループボタン</li>
+	<li>レイアウトグリッド</li>
+</ul>
+
+<h3>インラインボタン</h3>
+
+<p>
+jQuery Mobileのボタンはブロックレベル要素として親要素いっぱいに広がります。<br>
+ボタンはインライン要素として表示することもでき、文字列の量によってサイズを可変にすることもできます。<br>
+その場合は要素の属性に「<strong>data-inline=&quot;true&quot;</strong>」を指定します。
+</p>
+<a href="#" data-role="button" data-inline="true">はい</a>
+<a href="#" data-role="button" data-inline="true">いいえ</a>
+<a href="#" data-role="button" data-inline="true">わかりません</a>
+
+<h4>ソース</h4>
+<pre class="brush:html;">
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;はい&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;いいえ&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;わかりません&lt;/a&gt;
+</pre>
+
+
+<h3>グループボタン</h3>
+<p>
+グループボタンは複数のボタンを関連づけして表示したいときに利用します。<br>
+グループ化するには、ボタン群をコンテナとなる要素で囲みます。<br>
+その要素に対し「<strong>data-role=&quot;controlgroup&quot;</strong>」を指定することで実現できます。
+</p>
+
+<div data-role="controlgroup">
+<a href="#" data-role="button">はい</a>
+<a href="#" data-role="button">いいえ</a>
+<a href="#" data-role="button">わかりません</a>
+</div>
+
+<p>ボタンを横向きに並べるには「<strong>data-type=&quot;horizontal&quot;</strong>」を指定します。</p>
+<div data-role="controlgroup" data-type="horizontal">
+<a href="#" data-role="button">はい</a>
+<a href="#" data-role="button">いいえ</a>
+<a href="#" data-role="button">わかりません</a>
+</div>
+
+<h4>ソース</h4>
+<pre class="brush:html;">
+&lt;div data-role=&quot;controlgroup&quot;&gt;
+	&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;はい&lt;/a&gt;
+	&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;いいえ&lt;/a&gt;
+	&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;わかりません&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div data-role=&quot;controlgroup&quot; data-type=&quot;horizontal&quot;&gt;
+	&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;はい&lt;/a&gt;
+	&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;いいえ&lt;/a&gt;
+	&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;わかりません&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>レイアウトグリッド</h3>
+<p>
+レイアウトグリッドは、画面の横幅を指定の数だけ分割し、個々のグリッドのサイズに合わせたボタンを配置することができます。<br>
+レイアウトグリッドは最大5カラムまで対応でき、カラム数に合ったCSSクラスを指定します。ここでは詳細を省きます。<br>
+<strong>※グリッドレイアウトでボタンを配置した際、文字列に対してボタンの横幅が足りないと、三点リーダーで表示されます。</strong>
+</p>
+<div class="ui-grid-a">
+	<div class="ui-block-a"><a href="#" data-role="button">ボタン</a></div>
+	<div class="ui-block-b"><a href="#" data-role="button">ボタン</a></div>
+</div>
+<div class="ui-grid-b">
+	<div class="ui-block-a"><a href="#" data-role="button">ボタン</a></div>
+	<div class="ui-block-b"><a href="#" data-role="button">ボタン</a></div>
+	<div class="ui-block-c"><a href="#" data-role="button">ボタン</a></div>
+</div>
+<div class="ui-grid-c">
+	<div class="ui-block-a"><a href="#" data-role="button">ボタン</a></div>
+	<div class="ui-block-b"><a href="#" data-role="button">ボタン</a></div>
+	<div class="ui-block-c"><a href="#" data-role="button">ボタン</a></div>
+	<div class="ui-block-d"><a href="#" data-role="button">ボタン</a></div>
+</div>
+<div class="ui-grid-d">
+	<div class="ui-block-a"><a href="#" data-role="button">ボタン</a></div>
+	<div class="ui-block-b"><a href="#" data-role="button">ボタン</a></div>
+	<div class="ui-block-c"><a href="#" data-role="button">ボタン</a></div>
+	<div class="ui-block-d"><a href="#" data-role="button">ボタン</a></div>
+	<div class="ui-block-e"><a href="#" data-role="button">ボ～～～～～～タ～～～～～～ン</a></div>
+</div>
+
+<h4>ソース</h4>
+<pre class="brush:html;">
+&lt;div class=&quot;ui-grid-a&quot;&gt;
+	&lt;div class=&quot;ui-block-a&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+	&lt;div class=&quot;ui-block-b&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui-grid-b&quot;&gt;
+	&lt;div class=&quot;ui-block-a&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+	&lt;div class=&quot;ui-block-b&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+	&lt;div class=&quot;ui-block-c&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui-grid-c&quot;&gt;
+	&lt;div class=&quot;ui-block-a&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+	&lt;div class=&quot;ui-block-b&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+	&lt;div class=&quot;ui-block-c&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+	&lt;div class=&quot;ui-block-d&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui-grid-d&quot;&gt;
+	&lt;div class=&quot;ui-block-a&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+	&lt;div class=&quot;ui-block-b&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+	&lt;div class=&quot;ui-block-c&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+	&lt;div class=&quot;ui-block-d&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボタン&lt;/a&gt;&lt;/div&gt;
+	&lt;div class=&quot;ui-block-e&quot;&gt;&lt;a href=&quot;#&quot; data-role=&quot;button&quot;&gt;ボ～～～～～～タ～～～～～～ン&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>その他指定可能なボタンのdata属性</h3>
+
+<h4>アイコンセット</h4>
+<p>
+jQuery Mobileでは、モバイルアプリでよく使うと思われるアイコンのセットを用意しています。<br>
+白いアイコンが黒い円に自動的に半透明になって重ねられ、背景と上手く組み合わせられます。<br>
+ボタンにアイコンを表示させたい場合は「<strong>data-icon=&quot;&quot;</strong>」を指定します。<br>
+指定できるアイコンの種類は以下のようになっています。<br>
+</p>
+<a href="#" data-role="button" data-icon="arrow-r" data-inline="true">arrow-r</a>
+<a href="#" data-role="button" data-icon="arrow-l" data-inline="true">arrow-l</a>
+<a href="#" data-role="button" data-icon="arrow-u" data-inline="true">arrow-u</a>
+<a href="#" data-role="button" data-icon="arrow-d" data-inline="true">arrow-d</a>
+<a href="#" data-role="button" data-icon="plus" data-inline="true">plus</a>
+<a href="#" data-role="button" data-icon="minus" data-inline="true">minus</a>
+<a href="#" data-role="button" data-icon="back" data-inline="true">back</a>
+<a href="#" data-role="button" data-icon="forward" data-inline="true">forward</a>
+<a href="#" data-role="button" data-icon="check" data-inline="true">check</a>
+<a href="#" data-role="button" data-icon="delete" data-inline="true">delete</a>
+<a href="#" data-role="button" data-icon="search" data-inline="true">search</a>
+<a href="#" data-role="button" data-icon="gear" data-inline="true">gear</a>
+<a href="#" data-role="button" data-icon="grid" data-inline="true">grid</a>
+<a href="#" data-role="button" data-icon="star" data-inline="true">star</a>
+<a href="#" data-role="button" data-icon="refresh" data-inline="true">refresh</a>
+<a href="#" data-role="button" data-icon="home" data-inline="true">home</a>
+<a href="#" data-role="button" data-icon="info" data-inline="true">info</a>
+<a href="#" data-role="button" data-icon="alert" data-inline="true">alert</a>
+
+<h4>ソース</h4>
+<pre class="brush:html;">
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;arrow-r&quot; data-inline=&quot;true&quot;&gt;arrow-r&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;arrow-l&quot; data-inline=&quot;true&quot;&gt;arrow-l&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;arrow-u&quot; data-inline=&quot;true&quot;&gt;arrow-u&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;arrow-d&quot; data-inline=&quot;true&quot;&gt;arrow-d&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;plus&quot; data-inline=&quot;true&quot;&gt;plus&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;minus&quot; data-inline=&quot;true&quot;&gt;minus&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;back&quot; data-inline=&quot;true&quot;&gt;back&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;forward&quot; data-inline=&quot;true&quot;&gt;forward&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;check&quot; data-inline=&quot;true&quot;&gt;check&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;delete&quot; data-inline=&quot;true&quot;&gt;delete&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;search&quot; data-inline=&quot;true&quot;&gt;search&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;gear&quot; data-inline=&quot;true&quot;&gt;gear&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;grid&quot; data-inline=&quot;true&quot;&gt;grid&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;star&quot; data-inline=&quot;true&quot;&gt;star&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;refresh&quot; data-inline=&quot;true&quot;&gt;refresh&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;home&quot; data-inline=&quot;true&quot;&gt;home&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;info&quot; data-inline=&quot;true&quot;&gt;info&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;alert&quot; data-inline=&quot;true&quot;&gt;alert&lt;/a&gt;
+</pre>
+
+<h4>アイコンの位置</h4>
+<p>
+初期状態では、アイコンはボタンの左側に表示されます。<br>
+「<strong>data-iconpos=&quot;&quot;</strong>」指定することで、テキストの上下左右どこにでも表示させることが可能です。
+</p>
+<p>left(左に表示)</p>
+<a href="#" data-role="button" data-icon="star" data-iconpos="left">←(Default)</a>
+<p>right(右に表示)</p>
+<a href="#" data-role="button" data-icon="star" data-iconpos="right">→</a>
+<p>top(上に表示)</p>
+<a href="#" data-role="button" data-icon="star" data-iconpos="top">↑</a>
+<p>bottom(下に表示)</p>
+<a href="#" data-role="button" data-icon="star" data-iconpos="bottom">↓</a>
+<p>notext(アイコンのみ表示)</p>
+<a href="#" data-role="button" data-icon="star" data-iconpos="notext">見えない・・・・</a>
+
+<h4>ソース</h4>
+<pre class="brush:html;">
+&lt;p&gt;left(左に表示)&lt;/p&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;star&quot; data-iconpos=&quot;left&quot;&gt;←(Default)&lt;/a&gt;
+&lt;p&gt;right(右に表示)&lt;/p&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;star&quot; data-iconpos=&quot;right&quot;&gt;→&lt;/a&gt;
+&lt;p&gt;top(上に表示)&lt;/p&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;star&quot; data-iconpos=&quot;top&quot;&gt;↑&lt;/a&gt;
+&lt;p&gt;bottom(下に表示)&lt;/p&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;star&quot; data-iconpos=&quot;bottom&quot;&gt;↓&lt;/a&gt;
+&lt;p&gt;notext(アイコンのみ表示)&lt;/p&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-icon=&quot;star&quot; data-iconpos=&quot;notext&quot;&gt;見えない・・・・&lt;/a&gt;
+</pre>
+
+<h4>テーマ設定</h4>
+<p>
+jQuery Mobileは、ボタンのスタイルも自由に変更できるリッチなテーマシステムを備えています。
+ボタンは手動で「<strong>data-theme=&quot;a-e&quot;</strong>」を設定することで、コンテナとは異なった見え方にすることも出来ます。
+jQuery Mobileはデフォルトで以下のテーマを持っています。
+</p>
+<a href="#" data-role="button" data-inline="true" data-theme="a">data-theme=&quot;a&quot;</a>
+<a href="#" data-role="button" data-inline="true" data-theme="b">data-theme=&quot;b&quot;</a>
+<a href="#" data-role="button" data-inline="true" data-theme="c">data-theme=&quot;c&quot;</a>
+<a href="#" data-role="button" data-inline="true" data-theme="d">data-theme=&quot;d&quot;</a>
+<a href="#" data-role="button" data-inline="true" data-theme="e">data-theme=&quot;e&quot;</a>
+
+<h4>ソース</h4>
+<pre class="brush:html;">
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot; data-theme=&quot;a&quot;&gt;data-theme=&amp;quot;a&amp;quot;&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot; data-theme=&quot;b&quot;&gt;data-theme=&amp;quot;b&amp;quot;&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot; data-theme=&quot;c&quot;&gt;data-theme=&amp;quot;c&amp;quot;&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot; data-theme=&quot;d&quot;&gt;data-theme=&amp;quot;d&amp;quot;&lt;/a&gt;
+&lt;a href=&quot;#&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot; data-theme=&quot;e&quot;&gt;data-theme=&amp;quot;e&amp;quot;&lt;/a&gt;
+</pre>
+
+<h4>切り替え効果</h4>
+<p>
+jQuery Mobileでは、CSSによる6種類の切り替えエフェクトを用意しています。<br>
+これは、オブジェクトの切り替えやページ遷移、戻るボタンによる動作などで用いることが出来ます。
+</p>
+<a href="#dialog" data-role="button" data-inline="true" data-transition="slide">slide(Default)</a>
+<a href="#dialog" data-role="button" data-inline="true" data-transition="slideup">slideup</a>
+<a href="#dialog" data-role="button" data-inline="true" data-transition="slidedown">slidedown</a>
+<a href="#dialog" data-role="button" data-inline="true" data-transition="pop">pop</a>
+<a href="#dialog" data-role="button" data-inline="true" data-transition="fade">fade</a>
+<a href="#dialog" data-role="button" data-inline="true" data-transition="flip">flip</a>
+
+<h4>ソース</h4>
+<pre class="brush:html;">
+&lt;a href=&quot;#dialog&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot; data-transition=&quot;slide&quot;&gt;slide(Default)&lt;/a&gt;
+&lt;a href=&quot;#dialog&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot; data-transition=&quot;slideup&quot;&gt;slideup&lt;/a&gt;
+&lt;a href=&quot;#dialog&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot; data-transition=&quot;slidedown&quot;&gt;slidedown&lt;/a&gt;
+&lt;a href=&quot;#dialog&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot; data-transition=&quot;pop&quot;&gt;pop&lt;/a&gt;
+&lt;a href=&quot;#dialog&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot; data-transition=&quot;fade&quot;&gt;fade&lt;/a&gt;
+&lt;a href=&quot;#dialog&quot; data-role=&quot;button&quot; data-inline=&quot;true&quot; data-transition=&quot;flip&quot;&gt;flip&lt;/a&gt;
+</pre>
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

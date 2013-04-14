@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>テーマシステム</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>テーマシステム</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+<h2>テーマシステム概要</h2>
+<p>
+jQuery Mobileに含まれる全てのレイアウトやウィジェットは、<br>
+統一感のあるサイトやアプリケーションに実装するために新しいオブジェクト指向CSSフレームワークが適用されています。<br>
+このテーマシステムはjQuery UIのテーマロールに近いものです。<br>
+<br>
+<strong>テーマシステムの鍵は、色やテクスチャが、paddingなどの構造的なスタイルから分離されていることにあります。</strong><br>
+これによりテーマの色やテクスチャはスタイルシートで定義されるだけで、テーマの各所で組み合わせられて反映されるようになります。
+<br>
+コンテンツ部分に対して特に指定が無ければ、jQuery Mobileはヘッダの&quot;a&quot;に対して最もコントラストの調和する&quot;c&quot;を適用します。<br>
+<br>
+各ウィジェット毎に指定方法が異なりますので詳細は公式マニュアルのdata属性リファレンスを参照してください。<br>
+<a href="http://dev.screw-axis.com/doc/jquery_mobile/api/data_attributes/" data-rel="external" data-role="button">data属性リファレンス</a>
+</p>
+
+<h2>独自テーマを作るには？</h2>
+<p>
+独自テーマを作る最も簡単な方法は テーマローラーを使うことです。<br>
+テーマローラーで独自のテーマをデザインし、カスタムCSSファイルとしてダウンロードすることが出来ので、<br>
+あとは、既存のサイトに組み込むで動作します。<br>
+<br>
+テーマローラーのURLは以下になります。<br>
+<a href="http://jquerymobile.com/themeroller/" data-rel="external">http://jquerymobile.com/themeroller/</a>
+</p>
+
+<h2>テーマクラス</h2>
+<p>
+カラーを<strong>data-theme</strong> 属性で指定することは、テーマシステムを活用したひとつの方法です。<br>
+しかしまた、直接クラス指定を通じて色やテクスチャ、フォントなどを指定することも可能です。<br>
+これは特に、独自のレイアウト要素や作る場合に便利な方法です。<br>
+以下に、いくつかの使用頻度の高いclassを挙げておきます。
+</p>
+<div class="ui-body ui-body-d">
+<dl>
+<dt><strong>ui-bar</strong></dt>
+<dd>ツールバー部分のpaddingなどの構造を定義しています</dd>
+<dt><strong>ui-bar-[a-e]</strong></dt>
+<dd>ツールバー部分のスタイルを定義します。</dd>
+<dt><strong>ui-body</strong></dt>
+<dd>コンテンツ部分のpaddingなどの構造を定義しています。</dd>
+<dt><strong>ui-body-[a-e]</strong></dt>
+<dd>コンテンツ部分のスタイルを定義します。通常は、ui-bodyと</dd>
+<dt><strong>ui-btn-up-[a-e]</strong></dt>
+<dd>ボタンやクリック可能な要素のスタイルを定義します。</dd>
+<dt><strong>ui-corner-all</strong></dt>
+<dd>テーマ全体で使われる外枠の角を丸くするスタイルを定義します。</dd>
+<dt><strong>ui-shadow</strong></dt>
+<dd>テーマ全体で使われる、要素へのドロップシャドウ定義をCSSのbox-shadowプロパティを使って行います。</dd>
+<dt><strong>ui-disabled</strong></dt>
+<dd>使用不可状態の見た目や動作を定義しています。</dd>
+</dl>
+</div>
+<div data-role="collapsible" data-collapsed="false">
+	<h2>デフォルトで定義されているテーマ(※デフォルトで次の5種類が定義されています)</h2>
+	<div data-role="collapsible" data-collapsed="false">
+		<h3>ツールバー</h3>
+		<div class="ui-bar ui-bar-a">テーマ A - <a href="#" data-role="none" class="ui-link">リンク</a></div>
+		<div class="ui-bar ui-bar-b">テーマ B - <a href="#" data-role="none" class="ui-link">リンク</a></div>
+		<div class="ui-bar ui-bar-c">テーマ C - <a href="#" data-role="none" class="ui-link">リンク</a></div>
+		<div class="ui-bar ui-bar-d">テーマ D - <a href="#" data-role="none" class="ui-link">リンク</a></div>
+		<div class="ui-bar ui-bar-e">テーマ E - <a href="#" data-role="none" class="ui-link">リンク</a></div>
+	</div>
+
+	<div data-role="collapsible" data-collapsed="false">
+		<h3>コンテンツ部分</h3>
+		<div class="ui-body ui-body-a">テーマ A - <a href="#">リンク</a></div>
+		<div class="ui-body ui-body-b">テーマ B - <a href="#">リンク</a></div>
+		<div class="ui-body ui-body-c">テーマ C - <a href="#">リンク</a></div>
+		<div class="ui-body ui-body-d">テーマ D - <a href="#">リンク</a></div>
+		<div class="ui-body ui-body-e">テーマ E - <a href="#">リンク</a></div>
+	</div>
+	<div data-role="collapsible" data-collapsed="false">
+		<h3>リストとボタン</h3>
+		<ul data-role="listview" data-inset="true" data-theme="a">
+			<li><a href="#">テーマ A</a></li>
+			<li><a href="#">テーマ A</a></li>
+		</ul>
+		<ul data-role="listview" data-inset="true" data-theme="b">
+			<li><a href="#">テーマ B</a></li>
+			<li><a href="#">テーマ B</a></li>
+		</ul>
+		<ul data-role="listview" data-inset="true" data-theme="c">
+			<li><a href="#">テーマ C</a></li>
+			<li><a href="#">テーマ C</a></li>
+		</ul>
+		<ul data-role="listview" data-inset="true" data-theme="d">
+			<li><a href="#">テーマ D</a></li>
+			<li><a href="#">テーマ D</a></li>
+		</ul>
+		<ul data-role="listview" data-inset="true" data-theme="e">
+			<li><a href="#">テーマ E</a></li>
+			<li><a href="#">テーマ E</a></li>
+		</ul>
+
+		<a href="#" data-role="button" data-theme="a" data-icon="arrow-l">テーマ A</a>
+		<a href="#" data-role="button" data-theme="b" data-icon="arrow-l">テーマ B</a>
+		<a href="#" data-role="button" data-theme="c" data-icon="arrow-l">テーマ C</a>
+		<a href="#" data-role="button" data-theme="d" data-icon="arrow-l">テーマ D</a>
+		<a href="#" data-role="button" data-theme="e" data-icon="arrow-l">テーマ E</a>
+
+		<p>
+		初期状態では、どのボタンも自動的に親要素の見本指定に従って設定されます。<br>
+		以下のように、各ボタンに指定を行わなくても親の色にあわせて自動的に同じテーマが適用されます。
+		</p>
+
+		<div data-role="header" data-theme="a"><h1>ツールバー A</h1><a href="#" data-icon="arrow-l">ボタン A</a></div>
+		<div data-role="header" data-theme="b"><h1>ツールバー B</h1><a href="#" data-icon="arrow-l">ボタン B</a></div>
+		<div data-role="header" data-theme="c"><h1>ツールバー C</h1><a href="#" data-icon="arrow-l">ボタン C</a></div>
+		<div data-role="header" data-theme="d"><h1>ツールバー D</h1><a href="#" data-icon="arrow-l">ボタン D</a></div>
+		<div data-role="header" data-theme="e"><h1>ツールバー E</h1><a href="#" data-icon="arrow-l">ボタン E</a></div>
+
+		<p>
+		何かしらの理由により親要素と異なる色を適用したい場合、色を変更したい対象に対して「<strong>data-theme=&quot;a-e&quot;</strong>」を指定することで変更することができます。
+		</p>
+
+		<div data-role="header" data-theme="a" class="ui-bar" data-backbtn="false">
+			<div><!-- wrapper div to have control over butttons -->
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="a">A</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="b">B</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="c">C</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="d">D</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="e">E</a>
+			</div>
+		</div>
+		<div data-role="header" data-theme="b" class="ui-bar" data-backbtn="false">
+			<div><!-- wrapper div to have control over butttons -->
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="a">A</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="b">B</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="c">C</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="d">D</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="e">E</a>
+			</div>
+		</div>
+		<div data-role="header" data-theme="c" class="ui-bar" data-backbtn="false">
+			<div><!-- wrapper div to have control over butttons -->
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="a">A</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="b">B</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="c">C</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="d">D</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="e">E</a>
+			</div>
+		</div>
+		<div data-role="header" data-theme="d" class="ui-bar" data-backbtn="false">
+			<div><!-- wrapper div to have control over butttons -->
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="a">A</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="b">B</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="c">C</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="d">D</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="e">E</a>
+			</div>
+		</div>
+		<div data-role="header" data-theme="e" class="ui-bar" data-backbtn="false">
+			<div><!-- wrapper div to have control over butttons -->
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="a">A</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="b">B</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="c">C</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="d">D</a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-theme="e">E</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

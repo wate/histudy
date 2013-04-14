@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQeury Mobileって？</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>jQeury Mobileって？</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+<h2>jQuery Mobileって何？</h2>
+<div data-role="collapsible" data-theme="c" data-content-theme="c" data-collapsed="false">
+<h3>公式ページの紹介を引用すると・・・</h3>
+<p>jQueryのモバイル環境へのアプローチは、総じてシンプルなものです。<br>
+最初の一行に JavaScript を書けば、おおよそ流通しているWebブラウザやタブレットに対応したユーザインターフェースを提供できるようになる、というものですから。<br>
+</p>
+<p>
+他の同種のライブラリとの決定的な違いは、非常に広範囲のプラットフォームをターゲットにしていることです。<br>
+jQuery開発チームでは、ある程度以上の機能を備えた、そこそこのシェアをもつ全ての携帯ブラウザをサポートしようと努力しています。<br>
+これによって、我々はデスクトップPCの従来からあるWebブラウザを扱うように、モバイル環境のWebブラウザを扱うことが可能になっています。<br>
+</p>
+<p>
+こうした汎用性の高いサポートを可能にするため、jQuery Mobileで扱う全てのページは、シンプルでセマンティックなHTMLでなければなりません。<br>
+そうしたセマンティックなページは、デバイス側で Progressive Enhancementに従ってCSSやJavaScriptを重ね、リッチでインタラクティブなページにしていきます。<br>
+また、WAI-ARIAのようなアクセシビリティ機能の面からも、このフレームワークを適用させることで対応できるようになります。<br>
+</p>
+<div data-role="collapsible" data-content-theme="c">
+<h3>WAI-ARIAってなに？</h3>
+<p>
+WAI-ARIAとは、「<strong>Web Accessibility Initiative-Accessible Rich Internet Applications</strong>」の略で、<br>
+W3Cが現在、勧告に向けて策定作業を進めているリッチなインターネットアプリケーションのアクセシビリティに関する仕様書のことです。<br>
+JavaScriptやAjaxなどを使用した動的なコンテンツは、スクリーンリーダーやキーボード操作では利用できないことがあります。<br>
+WAI-ARIAは、そういった問題を解決すべく、W3CのProtocols and Formats ワーキンググループ (PFWG) において策定されています。<br>
+</p>
+</div>
+</div>
+
+
+<div data-role="collapsible" data-theme="e" data-content-theme="e">
+<h3>簡単にまとめてみると・・・</h3>
+<p>要は、<strong>ちょ～～～簡単にスマホサイトが作れるよ。</strong>ということですね。</p>
+</div>
+
+<div data-role="collapsible" data-collapsed="false" data-theme="c" data-content-theme="c">
+<h2>サポートされるプラットフォーム</h2>
+<p>
+jQuery Mobileは、最も広範囲な互換性をもつWebサイト/アプリケーション構築用HTML5ライブラリで、<br />
+ほぼ全ての主要なデスクトップ端末、スマートフォン、タブレット、電子リーダで動作します。<br />
+更に、プログレッシブ・エンハンスメントにより古いブラウザもサポートされます。
+</p>
+<p>
+サポートシステムは、プラットフォームをA(全機能)、B(Ajax以外)、C(基本のみ)の3段階のグレードに分類するようにしています。<br />
+見栄えに関してはCSSのレンダリング機能に依るところが大きく、同じAグレードであっても必ずピクセル単位で同一の表示が保証できるわけではありませんが、<br />
+Web上で自然に閲覧できるようにはなっています。
+</p>
+<div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="e">
+<h3>全機能をサポート</h3>
+<ul>
+<li>Apple iOS 3.2-5.0</li>
+<li>Android 2.1-2.3</li>
+<li>Android 3.1 (Honeycomb)</li>
+<li>Android 4.0 (ICS)</li>
+<li>Windows Phone 7-7.5</li>
+<li>Blackberry 6.0</li>
+<li>Blackberry 7</li>
+<li>Blackberry Playbook (1.0-2.0)</li>
+<li>Palm WebOS (1.4-2.0)</li>
+<li>Palm WebOS 3.0</li>
+<li>Firebox Mobile (10 Beta)</li>
+<li>Skyfire 4.1</li>
+<li>Opera Mobile 11.5: Tested on Android 2.3</li>
+<li>Meego 1.2</li>
+<li>Samsung Bada 2.0</li>
+<li>UC Browser</li>
+<li>Kindle 3 and Fire</li>
+<li>Nook Color 1.4.1</li>
+<li>Chrome Desktop 11-17</li>
+<li>Firefox Desktop 4-9</li>
+<li>Internet Explorer 7-9</li>
+<li>Opera Desktop 10-11</li>
+</ul>
+</div>
+
+<div data-role="collapsible" data-theme="b" data-content-theme="b">
+<h3>Ajaxナビゲーション機能以外をサポート</h3>
+
+<ul>
+<li>Blackberry 5.0</li>
+<li>Opera Mini (5.0-6.5)</li>
+<li>Nokia Symbian^3</li>
+</ul>
+</div>
+<div data-role="collapsible" data-theme="a" data-content-theme="a">
+<h3>基本的な部分のみをサポート</h3>
+
+<ul>
+<li>Blackberry 4.x</li>
+<li>Windows Mobile</li>
+<li>All older smartphone platforms and featurephones</li>
+</ul>
+</div>
+</div>
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

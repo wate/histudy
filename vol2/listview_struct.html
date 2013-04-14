@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>階層化リスト</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>階層化リスト</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+ulタグやolタグを使ってリストを入れ子にすることでリストを階層構造にすることができます。<br>
+この階層構造は、jQuery Mobile側が自動で処理し、子リストのページを自動生成します。
+
+<h2>サンプルソース</h2>
+<pre class="brush:html;">
+&lt;ul data-role=&quot;listview&quot;&gt;
+	&lt;li&gt;Theme
+		&lt;ul&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/perl/&quot; data-rel=&quot;external&quot;&gt;Perl&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/java/&quot; data-rel=&quot;external&quot;&gt;Java&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/inet/&quot; data-rel=&quot;external&quot;&gt;Web &amp;amp; Internet&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/xml/&quot; data-rel=&quot;external&quot;&gt;XML&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/database/&quot; data-rel=&quot;external&quot;&gt;データベース&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/security/&quot; data-rel=&quot;external&quot;&gt;Security&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/linux/&quot; data-rel=&quot;external&quot;&gt;Linux&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/unix/&quot; data-rel=&quot;external&quot;&gt;Unix&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/mac/&quot; data-rel=&quot;external&quot;&gt;Macintosh/OS X&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/windows/&quot; data-rel=&quot;external&quot;&gt;Windows&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/sysad/&quot; data-rel=&quot;external&quot;&gt;ネットワーク/システム管理&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/prog/&quot; data-rel=&quot;external&quot;&gt;プログラミング&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/hardware/&quot; data-rel=&quot;external&quot;&gt;ハードウェア&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/math/&quot; data-rel=&quot;external&quot;&gt;Math&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;Series
+		&lt;ul&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/hacks/&quot; data-rel=&quot;external&quot;&gt;Hacks&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/cookbook/&quot; data-rel=&quot;external&quot;&gt;クックブック&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/quick/&quot; data-rel=&quot;external&quot;&gt;クイックリファレンス&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/desktop/&quot; data-rel=&quot;external&quot;&gt;デスクトップリファレンス&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/tmm/&quot; data-rel=&quot;external&quot;&gt;The Missing Manual&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/make/&quot; data-rel=&quot;external&quot;&gt;Make&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;http://www.oreilly.co.jp/books/hf/&quot; data-rel=&quot;external&quot;&gt;Head First&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+
+</pre>
+
+<h2>実際に表示するとこんな感じ！</h2>
+<ul data-role="listview">
+	<li>Theme
+		<ul>
+			<li><a href="http://www.oreilly.co.jp/books/perl/" data-rel="external">Perl</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/java/" data-rel="external">Java</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/inet/" data-rel="external">Web &amp; Internet</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/xml/" data-rel="external">XML</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/database/" data-rel="external">データベース</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/security/" data-rel="external">Security</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/linux/" data-rel="external">Linux</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/unix/" data-rel="external">Unix</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/mac/" data-rel="external">Macintosh/OS X</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/windows/" data-rel="external">Windows</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/sysad/" data-rel="external">ネットワーク/システム管理</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/prog/" data-rel="external">プログラミング</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/hardware/" data-rel="external">ハードウェア</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/math/" data-rel="external">Math</a></li>
+		</ul>
+	</li>
+	<li>Series
+		<ul>
+			<li><a href="http://www.oreilly.co.jp/books/hacks/" data-rel="external">Hacks</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/cookbook/" data-rel="external">クックブック</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/quick/" data-rel="external">クイックリファレンス</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/desktop/" data-rel="external">デスクトップリファレンス</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/tmm/" data-rel="external">The Missing Manual</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/make/" data-rel="external">Make</a></li>
+			<li><a href="http://www.oreilly.co.jp/books/hf/" data-rel="external">Head First</a></li>
+		</ul>
+	</li>
+</ul>
+
+
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

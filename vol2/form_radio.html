@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ラジオ</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="" data-rel="back">戻る</a>
+<h1>ラジオ</h1>
+
+</div>
+<div data-role="content">
+ラジオ
+
+<h3>表示</h3>
+<fieldset data-role="controlgroup">
+    <legend>ラジオによる選択</legend>
+    <input type="radio" name="c" id="r_1" />
+    <label for="r_1">one</label>
+    <input type="radio" name="c" id="r_2" />
+    <label for="r_2">two</label>
+    <input type="radio" name="c" id="r_3" />
+    <label for="r_3">three</label>
+    <input type="radio" name="c" id="r_4" />
+    <label for="r_4">four</label>
+    <input type="radio" name="c" id="r_5" />
+    <label for="r_5">five</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="horizontal">
+    <legend>ラジオによる選択(横方法)</legend>
+    <input type="radio" name="c" id="rh_1" />
+    <label for="rh_1">one</label>
+    <input type="radio" name="c" id="rh_2" />
+    <label for="rh_2">two</label>
+    <input type="radio" name="c" id="rh_3" />
+    <label for="rh_3">three</label>
+    <input type="radio" name="c" id="rh_4" />
+    <label for="rh_4">four</label>
+    <input type="radio" name="c" id="rh_5" />
+    <label for="rh_5">five</label>
+</fieldset>
+
+
+
+<h3>ソース</h3>
+<pre class="brush:html;">
+&lt;fieldset data-role=&quot;controlgroup&quot;&gt;
+    &lt;legend&gt;ラジオによる選択&lt;/legend&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;r_1&quot; /&gt;
+    &lt;label for=&quot;r_1&quot;&gt;one&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;r_2&quot; /&gt;
+    &lt;label for=&quot;r_2&quot;&gt;two&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;r_3&quot; /&gt;
+    &lt;label for=&quot;r_3&quot;&gt;three&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;r_4&quot; /&gt;
+    &lt;label for=&quot;r_4&quot;&gt;four&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;r_5&quot; /&gt;
+    &lt;label for=&quot;r_5&quot;&gt;five&lt;/label&gt;
+&lt;/fieldset&gt;
+
+&lt;fieldset data-role=&quot;controlgroup&quot; data-type=&quot;horizontal&quot;&gt;
+    &lt;legend&gt;ラジオによる選択(横方法)&lt;/legend&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;rh_1&quot; /&gt;
+    &lt;label for=&quot;rh_1&quot;&gt;one&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;rh_2&quot; /&gt;
+    &lt;label for=&quot;rh_2&quot;&gt;two&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;rh_3&quot; /&gt;
+    &lt;label for=&quot;rh_3&quot;&gt;three&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;rh_4&quot; /&gt;
+    &lt;label for=&quot;rh_4&quot;&gt;four&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;c&quot; id=&quot;rh_5&quot; /&gt;
+    &lt;label for=&quot;rh_5&quot;&gt;five&lt;/label&gt;
+&lt;/fieldset&gt;
+
+
+</pre>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<h4>フッター</h4>
+
+</div>
+</div>
+</body>
+</html>

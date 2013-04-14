@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQeury Mobileでサイトを作る上でのお約束</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="/HiStudy/" data-icon="home">Home</a>
+<h1>jQeury Mobileでサイトを作る上でのお約束</h1>
+<a href="http://jquerymobile.com/" data-rel="external" data-icon="forward" data-iconpos="right">本家</a>
+
+</div>
+<div data-role="content">
+<h2>すべてのベースになるページ機構</h2>
+<p>「ページ機構」はjQuery Mobileを使う際にはほとんどの場合に利用することになります。</p>
+
+<h3>ページ機構とは</h3>
+
+<p>公式の内容を引用すると、</p>
+
+<blockquote>
+jQuery Mobileの「ページ」構造は、1枚のページとして用いることも、内部的なリンク構造を持った複数のページとして作成することも可能です。<br>
+このモデルは、ウェブサイト開発におけるベストプラクティスの実現を目指しています。<br>
+つまり通常のリンクも、特別な設定なしに動作するようになっていますし、<br>
+一方で普通のHTTPリクエストでは実現できないようなリッチでネイティブなリンクを作成することも可能なようにすることです。<br>
+</blockquote>
+<p>
+ってことらしいですが、小難しい話をしてもあまり意味がなさそうなので省略しますが、<br>
+簡単に言うと、後述するページ機構をbodyタグ内に記述して利用します。<br>
+また、jQuery Mobileでは「<strong>data-role=&quot;&quot;</strong>」というHTML5の独自データ属性というものを使い定義します。<br>
+で、ページ機構には
+</p>
+
+<dl>
+<dt>単一ページテンプレート</dt>
+<dd>単一のページに１つのページ機構を持つテンプレート</dd>
+<dt>複数ページテンプレート</dt>
+<dd>単一のhtmlファイルに、内部的なリンク構造を持つテンプレート</dd>
+</dl>
+<p>ってのがあります。</p>
+
+<a href="template.html" data-role="button" data-ajax="false">ページの雛形はこんな感じ！</a>
+
+<h3>メタ要素 Viewport</h3>
+<p>
+先ほどのコード例でhead要素内にviewportというメタ要素が指定されていることに注意してください。<br>
+これは、ブラウザに対してページを表示する際のズームレベルや方向を指示するためのものです。<br>
+この指定が無いと、多くのブラウザは900ピクセル程度の仮想ページを表示します。<br>
+しかしこれはデスクトップ用につくられたサイトを表示するのに適した大きさで、<br>
+jQuery Mobileでつくられたサイトにはズームアウトしすぎなので、<br>
+以下のようにviewportを指定することで、横幅はデバイス画面の持つピクセル数にあわせられます。<br>
+</p>
+<pre class="brush: html;">
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+</pre>
+<p>
+この設定によって、ユーザが自分で最適に見られるようズームするなどの動作が阻害されることはありません。<br>
+わずかにiOS上で端末の向きを変えた際に適切な横幅が用いられないという問題がありますが、<br>
+将来的なリリースで修正されることを期待します。<br>
+このviewport設定でズーム機能を停止することも可能ですが、<br>
+それは製作されるサイト特性上の話なので、jQuery Mobileでは関知しません。
+</p>
+<h2>ページコンテナ</h2>
+<p>
+bodyタグの要素内に、携帯端末上の「ページ」ごとに「<strong>data-role=&quot;page&quot;</strong>」 という属性指定をした要素(通常はdivタグ)を作ってやります。
+</p>
+<pre class="brush: html;">
+&lt;div data-role=&quot;page&quot;&gt;
+	&lt;div data-role=&quot;header&quot;&gt;
+	ここがヘッダーになります
+	&lt;/div&gt;
+	&lt;div data-role=&quot;content&quot;&gt;
+	ここがコンテンツ部分です！
+	&lt;/div&gt;
+	&lt;div data-role=&quot;footer&quot;&gt;
+	ここがフッターになります
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<li><a href="/HiStudy/" data-transition="slideup" data-icon="arrow-u" data-iconpos="top">slideup</a></li>
+<li><a href="/HiStudy/" data-transition="slidedown" data-icon="arrow-d" data-iconpos="top">slidedown</a></li>
+<li><a href="/HiStudy/" data-transition="pop" data-icon="check" data-iconpos="top">pop</a></li>
+<li><a href="/HiStudy/" data-transition="fade" data-icon="info" data-iconpos="top">fade</a></li>
+<li><a href="/HiStudy/" data-transition="flip" data-icon="gear" data-iconpos="top">flip</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<!-- DIALOG -->
+<div id="dialog" data-role="dialog" data-title="タイトル" data-close-btn-text="閉じる">
+<header data-role="header">
+<h1>ダイアログ</h1>
+</header>
+<div data-role="content">
+<p>理解できましたか？</p>
+<a href="" data-role="button" data-rel="back" data-theme="e">YE━━━━━━ d(ﾟ∀ﾟ)b ━━━━━━S!!</a>
+</div>
+</div>
+
+</body>
+</html>

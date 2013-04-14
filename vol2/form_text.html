@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>テキスト入力</title>
+<link rel="stylesheet" href="./js/jquery.mobile-1.0.1.min.css" />
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./js/syntaxhighlighter/shBrushXml.js"></script>
+<link type="text/css" rel="stylesheet" href="./js/syntaxhighlighter/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="" data-rel="back">戻る</a>
+<h1>テキスト入力</h1>
+
+</div>
+<div data-role="content">
+このコードによって、基本的なテキスト入力が作られます。デフォルトのスタイルでは、横幅は親要素に対して100%となり、ラベルは別の行に配置されます。
+これらをコンテナ要素で囲み、そこに data-role=“fieldcontain” 属性を指定することで、見た目を制御することも可能です。
+
+
+<h3>表示</h3>
+<label for="name_a">Text Input:</label>
+<input type="text" name="name_a" id="name_a" value="" />
+
+<div data-role="fieldcontain">
+<label for="name_b">Text Input:</label>
+<input type="text" name="name" id="name_b" value=""  />
+</div>
+
+<label for="textarea_a">Textarea:</label>
+<textarea name="textarea" id="textarea_a">
+
+</textarea>
+
+<div data-role="fieldcontain">
+<label for="textarea_b">Textarea:</label>
+<textarea name="textarea" id="textarea_b"></textarea>
+</div>
+
+
+<h3>ソース</h3>
+<pre class="brush:html;">
+&lt;label for=&quot;name_a&quot;&gt;Text Input:&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;name_a&quot; id=&quot;name_a&quot; value=&quot;&quot; /&gt;
+
+&lt;div data-role=&quot;fieldcontain&quot;&gt;
+&lt;label for=&quot;name_b&quot;&gt;Text Input:&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name_b&quot; value=&quot;&quot;  /&gt;
+&lt;/div&gt;
+
+&lt;label for=&quot;textarea_a&quot;&gt;Textarea:&lt;/label&gt;
+&lt;textarea name=&quot;textarea&quot; id=&quot;textarea_a&quot;&gt;
+
+&lt;/textarea&gt;
+
+&lt;div data-role=&quot;fieldcontain&quot;&gt;
+&lt;label for=&quot;textarea_b&quot;&gt;Textarea:&lt;/label&gt;
+&lt;textarea name=&quot;textarea&quot; id=&quot;textarea_b&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+</pre>
+
+
+</div>
+<div data-role="footer" data-position="fixed">
+<h4>フッター</h4>
+
+</div>
+</div>
+</body>
+</html>
